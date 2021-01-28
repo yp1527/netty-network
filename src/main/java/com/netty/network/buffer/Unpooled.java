@@ -679,23 +679,6 @@ public final class Unpooled {
         return ByteBufUtil.encodeString0(ALLOC, true, buffer, charset, 0);
     }
 
-    /**
-     * Creates a read-only buffer which disallows any modification operations
-     * on the specified {@code buffer}.  The new buffer has the same
-     * {@code readerIndex} and {@code writerIndex} with the specified
-     * {@code buffer}.
-     *
-     * @deprecated Use {@link ByteBuf#asReadOnly()}.
-     */
-    @Deprecated
-    public static ByteBuf unmodifiableBuffer(ByteBuf buffer) {
-        ByteOrder endianness = buffer.order();
-        if (endianness == BIG_ENDIAN) {
-            return new ReadOnlyByteBuf(buffer);
-        }
-
-        return new ReadOnlyByteBuf(buffer.order(BIG_ENDIAN)).order(LITTLE_ENDIAN);
-    }
 
     /**
      * Creates a new 4-byte big-endian buffer that holds the specified 32-bit integer.

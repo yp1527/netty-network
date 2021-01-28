@@ -19,7 +19,7 @@ package com.netty.network.bootstrap;
 import com.netty.network.channel.Channel;
 
 /**
- * @deprecated Use {@link io.netty.channel.ChannelFactory} instead.
+ * @deprecated Use {@link com.netty.network.bootstrap.ChannelFactory} instead.
  */
 @Deprecated
 public interface ChannelFactory<T extends Channel> {

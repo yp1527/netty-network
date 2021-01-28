@@ -1,6 +1,4 @@
 package com.netty.network.example;
-
-
 import com.netty.network.channel.ChannelInitializer;
 import com.netty.network.channel.ChannelPipeline;
 import com.netty.network.channel.socket.SocketChannel;
