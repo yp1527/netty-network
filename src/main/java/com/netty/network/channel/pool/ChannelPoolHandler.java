@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.pool;
+package com.netty.network.channel.pool;
 
 
-import org.jboss.netty.channel.Channel;
+import com.netty.network.channel.Channel;
 
 /**
  * Handler which is called for various actions done by the {@link ChannelPool}.

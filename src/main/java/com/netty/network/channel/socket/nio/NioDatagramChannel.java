@@ -13,17 +13,17 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.socket.nio;
+package com.netty.network.channel.socket.nio;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.channel.nio.AbstractNioMessageChannel;
-import org.jboss.netty.channel.socket.DatagramChannelConfig;
-import org.jboss.netty.channel.socket.DatagramPacket;
-import org.jboss.netty.channel.socket.InternetProtocolFamily;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.channel.*;
+import com.netty.network.channel.nio.AbstractNioMessageChannel;
+import com.netty.network.channel.socket.DatagramChannelConfig;
+import com.netty.network.channel.socket.DatagramPacket;
+import com.netty.network.channel.socket.InternetProtocolFamily;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
 
 import java.io.IOException;
 import java.net.*;
@@ -42,7 +42,7 @@ import java.util.*;
  * @see DatagramPacket
  */
 public final class NioDatagramChannel
-        extends AbstractNioMessageChannel implements org.jboss.netty.channel.socket.DatagramChannel {
+        extends AbstractNioMessageChannel implements com.netty.network.channel.socket.DatagramChannel {
 
     private static final ChannelMetadata METADATA = new ChannelMetadata(true);
     private static final SelectorProvider DEFAULT_SELECTOR_PROVIDER = SelectorProvider.provider();

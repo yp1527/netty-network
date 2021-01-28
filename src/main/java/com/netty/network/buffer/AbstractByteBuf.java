@@ -13,15 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.*;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.*;
+import com.netty.network.util.internal.MathUtil;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.util.internal.SystemPropertyUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,8 +33,6 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.GatheringByteChannel;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.charset.Charset;
-
-import static org.jboss.netty.util.internal.MathUtil.isOutOfBounds;
 
 
 /**
@@ -1353,7 +1352,7 @@ public abstract class AbstractByteBuf extends ByteBuf {
     }
 
     final void checkIndex0(int index, int fieldLength) {
-        if (isOutOfBounds(index, fieldLength, capacity())) {
+        if (MathUtil.isOutOfBounds(index, fieldLength, capacity())) {
             throw new IndexOutOfBoundsException(String.format(
                     "index: %d, length: %d (expected: range(0, %d))", index, fieldLength, capacity()));
         }
@@ -1361,7 +1360,7 @@ public abstract class AbstractByteBuf extends ByteBuf {
 
     protected final void checkSrcIndex(int index, int length, int srcIndex, int srcCapacity) {
         checkIndex(index, length);
-        if (isOutOfBounds(srcIndex, length, srcCapacity)) {
+        if (MathUtil.isOutOfBounds(srcIndex, length, srcCapacity)) {
             throw new IndexOutOfBoundsException(String.format(
                     "srcIndex: %d, length: %d (expected: range(0, %d))", srcIndex, length, srcCapacity));
         }
@@ -1369,7 +1368,7 @@ public abstract class AbstractByteBuf extends ByteBuf {
 
     protected final void checkDstIndex(int index, int length, int dstIndex, int dstCapacity) {
         checkIndex(index, length);
-        if (isOutOfBounds(dstIndex, length, dstCapacity)) {
+        if (MathUtil.isOutOfBounds(dstIndex, length, dstCapacity)) {
             throw new IndexOutOfBoundsException(String.format(
                     "dstIndex: %d, length: %d (expected: range(0, %d))", dstIndex, length, dstCapacity));
         }

@@ -20,16 +20,16 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package org.jboss.netty.util.internal.chmv8;
+package com.netty.network.util.internal.chmv8;
 
-import org.jboss.netty.util.internal.ThreadLocalRandom;
+import com.netty.network.util.internal.ThreadLocalRandom;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.*;
 import java.util.concurrent.*;
 
 /**
- * An {@link ExecutorService} for running {@link ForkJoinTask}s.
+ * An {@link ExecutorService} for running {@link com.netty.network.util.internal.chmv8.ForkJoinTask}s.
  * A {@code ForkJoinPool} provides the entry point for submissions
  * from non-{@code ForkJoinTask} clients, as well as management and
  * monitoring operations.
@@ -92,18 +92,18 @@ import java.util.concurrent.*;
  *  </tr>
  *  <tr>
  *    <td> <b>Arrange async execution</b></td>
- *    <td> {@link #execute(ForkJoinTask)}</td>
- *    <td> {@link ForkJoinTask#fork}</td>
+ *    <td> {@link #execute(com.netty.network.util.internal.chmv8.ForkJoinTask)}</td>
+ *    <td> {@link com.netty.network.util.internal.chmv8.ForkJoinTask#fork}</td>
  *  </tr>
  *  <tr>
  *    <td> <b>Await and obtain result</b></td>
- *    <td> {@link #invoke(ForkJoinTask)}</td>
- *    <td> {@link ForkJoinTask#invoke}</td>
+ *    <td> {@link #invoke(com.netty.network.util.internal.chmv8.ForkJoinTask)}</td>
+ *    <td> {@link com.netty.network.util.internal.chmv8.ForkJoinTask#invoke}</td>
  *  </tr>
  *  <tr>
  *    <td> <b>Arrange exec and obtain Future</b></td>
- *    <td> {@link #submit(ForkJoinTask)}</td>
- *    <td> {@link ForkJoinTask#fork} (ForkJoinTasks <em>are</em> Futures)</td>
+ *    <td> {@link #submit(com.netty.network.util.internal.chmv8.ForkJoinTask)}</td>
+ *    <td> {@link com.netty.network.util.internal.chmv8.ForkJoinTask#fork} (ForkJoinTasks <em>are</em> Futures)</td>
  *  </tr>
  * </table>
  *
@@ -562,9 +562,9 @@ public class ForkJoinPool extends AbstractExecutorService {
      * in WorkQueue.tryRemoveAndExec. We don't need the proxy to
      * actually do anything beyond having a unique identity.
      */
-    static final class EmptyTask extends ForkJoinTask<Void> {
+    static final class EmptyTask extends com.netty.network.util.internal.chmv8.ForkJoinTask<Void> {
         private static final long serialVersionUID = -7721805057305804111L;
-        EmptyTask() { status = ForkJoinTask.NORMAL; } // force done
+        EmptyTask() { status = com.netty.network.util.internal.chmv8.ForkJoinTask.NORMAL; } // force done
         public final Void getRawResult() { return null; }
         public final void setRawResult(Void x) {}
         public final boolean exec() { return true; }
@@ -651,12 +651,12 @@ public class ForkJoinPool extends AbstractExecutorService {
         volatile int qlock;        // 1: locked, -1: terminate; else 0
         volatile int base;         // index of next slot for poll
         int top;                   // index of next slot for push
-        ForkJoinTask<?>[] array;   // the elements (initially unallocated)
+        com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] array;   // the elements (initially unallocated)
         final ForkJoinPool pool;   // the containing pool (may be null)
         final ForkJoinWorkerThread owner; // owning thread or null if shared
         volatile Thread parker;    // == owner during call to park; else null
-        volatile ForkJoinTask<?> currentJoin;  // task being joined in awaitJoin
-        ForkJoinTask<?> currentSteal; // current non-local task being executed
+        volatile com.netty.network.util.internal.chmv8.ForkJoinTask<?> currentJoin;  // task being joined in awaitJoin
+        com.netty.network.util.internal.chmv8.ForkJoinTask<?> currentSteal; // current non-local task being executed
 
         volatile Object pad10, pad11, pad12, pad13, pad14, pad15, pad16, pad17;
         volatile Object pad18, pad19, pad1a, pad1b, pad1c, pad1d;
@@ -685,7 +685,7 @@ public class ForkJoinPool extends AbstractExecutorService {
          * near-empty queue has at least one unclaimed task.
          */
         final boolean isEmpty() {
-            ForkJoinTask<?>[] a; int m, s;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int m, s;
             int n = base - (s = top);
             return (n >= 0 ||
                     (n == -1 &&
@@ -702,8 +702,8 @@ public class ForkJoinPool extends AbstractExecutorService {
          * @param task the task. Caller must ensure non-null.
          * @throws RejectedExecutionException if array cannot be resized
          */
-        final void push(ForkJoinTask<?> task) {
-            ForkJoinTask<?>[] a; ForkJoinPool p;
+        final void push(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; ForkJoinPool p;
             int s = top, n;
             if ((a = array) != null) {    // ignore if queue removed
                 int m = a.length - 1;
@@ -720,21 +720,21 @@ public class ForkJoinPool extends AbstractExecutorService {
          * by owner or with lock held -- it is OK for base, but not
          * top, to move while resizings are in progress.
          */
-        final ForkJoinTask<?>[] growArray() {
-            ForkJoinTask<?>[] oldA = array;
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] growArray() {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] oldA = array;
             int size = oldA != null ? oldA.length << 1 : INITIAL_QUEUE_CAPACITY;
             if (size > MAXIMUM_QUEUE_CAPACITY)
                 throw new RejectedExecutionException("Queue capacity exceeded");
             int oldMask, t, b;
-            ForkJoinTask<?>[] a = array = new ForkJoinTask<?>[size];
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a = array = new com.netty.network.util.internal.chmv8.ForkJoinTask<?>[size];
             if (oldA != null && (oldMask = oldA.length - 1) >= 0 &&
                     (t = top) - (b = base) > 0) {
                 int mask = size - 1;
                 do {
-                    ForkJoinTask<?> x;
+                    com.netty.network.util.internal.chmv8.ForkJoinTask<?> x;
                     int oldj = ((b & oldMask) << ASHIFT) + ABASE;
                     int j    = ((b &    mask) << ASHIFT) + ABASE;
-                    x = (ForkJoinTask<?>)U.getObjectVolatile(oldA, oldj);
+                    x = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObjectVolatile(oldA, oldj);
                     if (x != null &&
                             U.compareAndSwapObject(oldA, oldj, x, null))
                         U.putObjectVolatile(a, j, x);
@@ -747,12 +747,12 @@ public class ForkJoinPool extends AbstractExecutorService {
          * Takes next task, if one exists, in LIFO order.  Call only
          * by owner in unshared queues.
          */
-        final ForkJoinTask<?> pop() {
-            ForkJoinTask<?>[] a; ForkJoinTask<?> t; int m;
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?> pop() {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; int m;
             if ((a = array) != null && (m = a.length - 1) >= 0) {
                 for (int s; (s = top - 1) - base >= 0;) {
                     long j = ((m & s) << ASHIFT) + ABASE;
-                    if ((t = (ForkJoinTask<?>)U.getObject(a, j)) == null)
+                    if ((t = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObject(a, j)) == null)
                         break;
                     if (U.compareAndSwapObject(a, j, t, null)) {
                         top = s;
@@ -768,11 +768,11 @@ public class ForkJoinPool extends AbstractExecutorService {
          * can be claimed without contention. Specialized versions
          * appear in ForkJoinPool methods scan and tryHelpStealer.
          */
-        final ForkJoinTask<?> pollAt(int b) {
-            ForkJoinTask<?> t; ForkJoinTask<?>[] a;
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?> pollAt(int b) {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a;
             if ((a = array) != null) {
                 int j = (((a.length - 1) & b) << ASHIFT) + ABASE;
-                if ((t = (ForkJoinTask<?>)U.getObjectVolatile(a, j)) != null &&
+                if ((t = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObjectVolatile(a, j)) != null &&
                         base == b && U.compareAndSwapObject(a, j, t, null)) {
                     U.putOrderedInt(this, QBASE, b + 1);
                     return t;
@@ -784,11 +784,11 @@ public class ForkJoinPool extends AbstractExecutorService {
         /**
          * Takes next task, if one exists, in FIFO order.
          */
-        final ForkJoinTask<?> poll() {
-            ForkJoinTask<?>[] a; int b; ForkJoinTask<?> t;
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?> poll() {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int b; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;
             while ((b = base) - top < 0 && (a = array) != null) {
                 int j = (((a.length - 1) & b) << ASHIFT) + ABASE;
-                t = (ForkJoinTask<?>)U.getObjectVolatile(a, j);
+                t = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObjectVolatile(a, j);
                 if (t != null) {
                     if (U.compareAndSwapObject(a, j, t, null)) {
                         U.putOrderedInt(this, QBASE, b + 1);
@@ -807,28 +807,28 @@ public class ForkJoinPool extends AbstractExecutorService {
         /**
          * Takes next task, if one exists, in order specified by mode.
          */
-        final ForkJoinTask<?> nextLocalTask() {
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?> nextLocalTask() {
             return mode == 0 ? pop() : poll();
         }
 
         /**
          * Returns next task, if one exists, in order specified by mode.
          */
-        final ForkJoinTask<?> peek() {
-            ForkJoinTask<?>[] a = array; int m;
+        final com.netty.network.util.internal.chmv8.ForkJoinTask<?> peek() {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a = array; int m;
             if (a == null || (m = a.length - 1) < 0)
                 return null;
             int i = mode == 0 ? top - 1 : base;
             int j = ((i & m) << ASHIFT) + ABASE;
-            return (ForkJoinTask<?>)U.getObjectVolatile(a, j);
+            return (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObjectVolatile(a, j);
         }
 
         /**
          * Pops the given task only if it is at the current top.
          * (A shared version is available only via FJP.tryExternalUnpush)
          */
-        final boolean tryUnpush(ForkJoinTask<?> t) {
-            ForkJoinTask<?>[] a; int s;
+        final boolean tryUnpush(com.netty.network.util.internal.chmv8.ForkJoinTask<?> t) {
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int s;
             if ((a = array) != null && (s = top) != base &&
                     U.compareAndSwapObject
                             (a, (((a.length - 1) & --s) << ASHIFT) + ABASE, t, null)) {
@@ -842,10 +842,10 @@ public class ForkJoinPool extends AbstractExecutorService {
          * Removes and cancels all known tasks, ignoring any exceptions.
          */
         final void cancelAll() {
-            ForkJoinTask.cancelIgnoringExceptions(currentJoin);
-            ForkJoinTask.cancelIgnoringExceptions(currentSteal);
-            for (ForkJoinTask<?> t; (t = poll()) != null; )
-                ForkJoinTask.cancelIgnoringExceptions(t);
+            com.netty.network.util.internal.chmv8.ForkJoinTask.cancelIgnoringExceptions(currentJoin);
+            com.netty.network.util.internal.chmv8.ForkJoinTask.cancelIgnoringExceptions(currentSteal);
+            for (com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; (t = poll()) != null; )
+                com.netty.network.util.internal.chmv8.ForkJoinTask.cancelIgnoringExceptions(t);
         }
 
         // Specialized execution methods
@@ -854,7 +854,7 @@ public class ForkJoinPool extends AbstractExecutorService {
          * Polls and runs tasks until empty.
          */
         final void pollAndExecAll() {
-            for (ForkJoinTask<?> t; (t = poll()) != null;)
+            for (com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; (t = poll()) != null;)
                 t.doExec();
         }
 
@@ -862,10 +862,10 @@ public class ForkJoinPool extends AbstractExecutorService {
          * Executes a top-level task and any local tasks remaining
          * after execution.
          */
-        final void runTask(ForkJoinTask<?> task) {
+        final void runTask(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
             if ((currentSteal = task) != null) {
                 task.doExec();
-                ForkJoinTask<?>[] a = array;
+                com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a = array;
                 int md = mode;
                 ++nsteals;
                 currentSteal = null;
@@ -875,7 +875,7 @@ public class ForkJoinPool extends AbstractExecutorService {
                     int s, m = a.length - 1;
                     while ((s = top - 1) - base >= 0) {
                         long i = ((m & s) << ASHIFT) + ABASE;
-                        ForkJoinTask<?> t = (ForkJoinTask<?>)U.getObject(a, i);
+                        com.netty.network.util.internal.chmv8.ForkJoinTask<?> t = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObject(a, i);
                         if (t == null)
                             break;
                         if (U.compareAndSwapObject(a, i, t, null)) {
@@ -894,16 +894,16 @@ public class ForkJoinPool extends AbstractExecutorService {
          *
          * @return false if no progress can be made, else true
          */
-        final boolean tryRemoveAndExec(ForkJoinTask<?> task) {
+        final boolean tryRemoveAndExec(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
             boolean stat;
-            ForkJoinTask<?>[] a; int m, s, b, n;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int m, s, b, n;
             if (task != null && (a = array) != null && (m = a.length - 1) >= 0 &&
                     (n = (s = top) - (b = base)) > 0) {
                 boolean removed = false, empty = true;
                 stat = true;
-                for (ForkJoinTask<?> t;;) {           // traverse from s to b
+                for (com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;;) {           // traverse from s to b
                     long j = ((--s & m) << ASHIFT) + ABASE;
-                    t = (ForkJoinTask<?>)U.getObject(a, j);
+                    t = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObject(a, j);
                     if (t == null)                    // inconsistent length
                         break;
                     else if (t == task) {
@@ -944,7 +944,7 @@ public class ForkJoinPool extends AbstractExecutorService {
          * task in its CountedCompleter computation.
          */
         final boolean pollAndExecCC(CountedCompleter<?> root) {
-            ForkJoinTask<?>[] a; int b; Object o; CountedCompleter<?> t, r;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int b; Object o; CountedCompleter<?> t, r;
             if ((b = base) - top < 0 && (a = array) != null) {
                 long j = (((a.length - 1) & b) << ASHIFT) + ABASE;
                 if ((o = U.getObjectVolatile(a, j)) == null)
@@ -972,7 +972,7 @@ public class ForkJoinPool extends AbstractExecutorService {
          * in its CountedCompleter computation.
          */
         final boolean externalPopAndExecCC(CountedCompleter<?> root) {
-            ForkJoinTask<?>[] a; int s; Object o; CountedCompleter<?> t, r;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int s; Object o; CountedCompleter<?> t, r;
             if (base - (s = top) < 0 && (a = array) != null) {
                 long j = (((a.length - 1) & (s - 1)) << ASHIFT) + ABASE;
                 if ((o = U.getObject(a, j)) instanceof CountedCompleter) {
@@ -1002,7 +1002,7 @@ public class ForkJoinPool extends AbstractExecutorService {
          * Internal version
          */
         final boolean internalPopAndExecCC(CountedCompleter<?> root) {
-            ForkJoinTask<?>[] a; int s; Object o; CountedCompleter<?> t, r;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int s; Object o; CountedCompleter<?> t, r;
             if (base - (s = top) < 0 && (a = array) != null) {
                 long j = (((a.length - 1) & (s - 1)) << ASHIFT) + ABASE;
                 if ((o = U.getObject(a, j)) instanceof CountedCompleter) {
@@ -1044,7 +1044,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             try {
                 U = getUnsafe();
                 Class<?> k = WorkQueue.class;
-                Class<?> ak = ForkJoinTask[].class;
+                Class<?> ak = com.netty.network.util.internal.chmv8.ForkJoinTask[].class;
                 QBASE = U.objectFieldOffset
                         (k.getDeclaredField("base"));
                 QLOCK = U.objectFieldOffset
@@ -1273,7 +1273,7 @@ public class ForkJoinPool extends AbstractExecutorService {
                     U.compareAndSwapInt(this, PLOCK, ps, nps = ps + PL_LOCK))
                 return nps;
             else if (spins >= 0) {
-                if (ThreadLocalRandom.current().nextInt() >= 0)
+                if (com.netty.network.util.internal.ThreadLocalRandom.current().nextInt() >= 0)
                     --spins;
             }
             else if (U.compareAndSwapInt(this, PLOCK, ps, ps | PL_SIGNAL)) {
@@ -1451,9 +1451,9 @@ public class ForkJoinPool extends AbstractExecutorService {
             }
         }
         if (ex == null)                     // help clean refs on way out
-            ForkJoinTask.helpExpungeStaleExceptions();
+            com.netty.network.util.internal.chmv8.ForkJoinTask.helpExpungeStaleExceptions();
         else                                // rethrow
-            ForkJoinTask.rethrow(ex);
+            com.netty.network.util.internal.chmv8.ForkJoinTask.rethrow(ex);
     }
 
     // Submissions
@@ -1486,9 +1486,9 @@ public class ForkJoinPool extends AbstractExecutorService {
      *
      * @param task the task. Caller must ensure non-null.
      */
-    final void externalPush(ForkJoinTask<?> task) {
+    final void externalPush(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         int[] z = submitters.get();
-        WorkQueue q; int r, m, s, n, am; ForkJoinTask<?>[] a;
+        WorkQueue q; int r, m, s, n, am; com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a;
         int ps = plock;
         WorkQueue[] ws = workQueues;
         if (z != null && ps > 0 && ws != null && (m = (ws.length - 1)) >= 0 &&
@@ -1526,7 +1526,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * eventually wrap around zero, this method harmlessly fails to
      * reinitialize if workQueues exists, while still advancing plock.
      */
-    private void fullExternalPush(ForkJoinTask<?> task) {
+    private void fullExternalPush(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         int r = 0; // random index seed
         for (int[] z = submitters.get();;) {
             WorkQueue[] ws; WorkQueue q; int ps, m, k;
@@ -1562,7 +1562,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             }
             else if ((q = ws[k = r & m & SQMASK]) != null) {
                 if (q.qlock == 0 && U.compareAndSwapInt(q, QLOCK, 0, 1)) {
-                    ForkJoinTask<?>[] a = q.array;
+                    com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a = q.array;
                     int s = q.top;
                     boolean submitted = false;
                     try {                      // locked version of push
@@ -1685,11 +1685,11 @@ public class ForkJoinPool extends AbstractExecutorService {
         long c = ctl;                            // for consistency check
         if ((ws = workQueues) != null && (m = ws.length - 1) >= 0 && w != null) {
             for (int j = m + m + 1, ec = w.eventCount;;) {
-                WorkQueue q; int b, e; ForkJoinTask<?>[] a; ForkJoinTask<?> t;
+                WorkQueue q; int b, e; com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;
                 if ((q = ws[(r - j) & m]) != null &&
                         (b = q.base) - q.top < 0 && (a = q.array) != null) {
                     long i = (((a.length - 1) & b) << ASHIFT) + ABASE;
-                    if ((t = ((ForkJoinTask<?>)
+                    if ((t = ((com.netty.network.util.internal.chmv8.ForkJoinTask<?>)
                             U.getObjectVolatile(a, i))) != null) {
                         if (ec < 0)
                             helpRelease(c, ws, w, q, b);
@@ -1823,12 +1823,12 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @return 0 if no progress can be made, negative if task
      * known complete, else positive
      */
-    private int tryHelpStealer(WorkQueue joiner, ForkJoinTask<?> task) {
+    private int tryHelpStealer(WorkQueue joiner, com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         int stat = 0, steps = 0;                    // bound to avoid cycles
         if (task != null && joiner != null &&
                 joiner.base - joiner.top >= 0) {        // hoist checks
             restart: for (;;) {
-                ForkJoinTask<?> subtask = task;     // current target
+                com.netty.network.util.internal.chmv8.ForkJoinTask<?> subtask = task;     // current target
                 for (WorkQueue j = joiner, v;;) {   // v is stealer of subtask
                     WorkQueue[] ws; int m, s, h;
                     if ((s = task.status) < 0) {
@@ -1853,13 +1853,13 @@ public class ForkJoinPool extends AbstractExecutorService {
                         }
                     }
                     for (;;) { // help stealer or descend to its stealer
-                        ForkJoinTask[] a; int b;
+                        com.netty.network.util.internal.chmv8.ForkJoinTask[] a; int b;
                         if (subtask.status < 0)     // surround probes with
                             continue restart;       //   consistency checks
                         if ((b = v.base) - v.top < 0 && (a = v.array) != null) {
                             int i = (((a.length - 1) & b) << ASHIFT) + ABASE;
-                            ForkJoinTask<?> t =
-                                    (ForkJoinTask<?>)U.getObjectVolatile(a, i);
+                            com.netty.network.util.internal.chmv8.ForkJoinTask<?> t =
+                                    (com.netty.network.util.internal.chmv8.ForkJoinTask<?>)U.getObjectVolatile(a, i);
                             if (subtask.status < 0 || j.currentJoin != subtask ||
                                     v.currentSteal != subtask)
                                 continue restart;   // stale
@@ -1869,7 +1869,7 @@ public class ForkJoinPool extends AbstractExecutorService {
                                     break restart;
                                 if (U.compareAndSwapObject(a, i, t, null)) {
                                     U.putOrderedInt(v, QBASE, b + 1);
-                                    ForkJoinTask<?> ps = joiner.currentSteal;
+                                    com.netty.network.util.internal.chmv8.ForkJoinTask<?> ps = joiner.currentSteal;
                                     int jt = joiner.top;
                                     do {
                                         joiner.currentSteal = t;
@@ -1883,7 +1883,7 @@ public class ForkJoinPool extends AbstractExecutorService {
                             }
                         }
                         else {                      // empty -- try to descend
-                            ForkJoinTask<?> next = v.currentJoin;
+                            com.netty.network.util.internal.chmv8.ForkJoinTask<?> next = v.currentJoin;
                             if (subtask.status < 0 || j.currentJoin != subtask ||
                                     v.currentSteal != subtask)
                                 continue restart;   // stale
@@ -1998,10 +1998,10 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @param task the task
      * @return task status on exit
      */
-    final int awaitJoin(WorkQueue joiner, ForkJoinTask<?> task) {
+    final int awaitJoin(WorkQueue joiner, com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         int s = 0;
         if (task != null && (s = task.status) >= 0 && joiner != null) {
-            ForkJoinTask<?> prevJoin = joiner.currentJoin;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?> prevJoin = joiner.currentJoin;
             joiner.currentJoin = task;
             do {} while (joiner.tryRemoveAndExec(task) && // process local tasks
                     (s = task.status) >= 0);
@@ -2047,10 +2047,10 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @param joiner the joining worker
      * @param task the task
      */
-    final void helpJoinOnce(WorkQueue joiner, ForkJoinTask<?> task) {
+    final void helpJoinOnce(WorkQueue joiner, com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         int s;
         if (joiner != null && task != null && (s = task.status) >= 0) {
-            ForkJoinTask<?> prevJoin = joiner.currentJoin;
+            com.netty.network.util.internal.chmv8.ForkJoinTask<?> prevJoin = joiner.currentJoin;
             joiner.currentJoin = task;
             do {} while (joiner.tryRemoveAndExec(task) && // process local tasks
                     (s = task.status) >= 0);
@@ -2092,9 +2092,9 @@ public class ForkJoinPool extends AbstractExecutorService {
      * find tasks either.
      */
     final void helpQuiescePool(WorkQueue w) {
-        ForkJoinTask<?> ps = w.currentSteal;
+        com.netty.network.util.internal.chmv8.ForkJoinTask<?> ps = w.currentSteal;
         for (boolean active = true;;) {
-            long c; WorkQueue q; ForkJoinTask<?> t; int b;
+            long c; WorkQueue q; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; int b;
             while ((t = w.nextLocalTask()) != null)
                 t.doExec();
             if ((q = findNonEmptyStealQueue()) != null) {
@@ -2130,8 +2130,8 @@ public class ForkJoinPool extends AbstractExecutorService {
      *
      * @return a task, if available
      */
-    final ForkJoinTask<?> nextTaskFor(WorkQueue w) {
-        for (ForkJoinTask<?> t;;) {
+    final com.netty.network.util.internal.chmv8.ForkJoinTask<?> nextTaskFor(WorkQueue w) {
+        for (com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;;) {
             WorkQueue q; int b;
             if ((t = w.nextLocalTask()) != null)
                 return t;
@@ -2319,8 +2319,8 @@ public class ForkJoinPool extends AbstractExecutorService {
     /**
      * Tries to pop the given task from submitter's queue in common pool.
      */
-    final boolean tryExternalUnpush(ForkJoinTask<?> task) {
-        WorkQueue joiner; ForkJoinTask<?>[] a; int m, s;
+    final boolean tryExternalUnpush(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
+        WorkQueue joiner; com.netty.network.util.internal.chmv8.ForkJoinTask<?>[] a; int m, s;
         int[] z = submitters.get();
         WorkQueue[] ws = workQueues;
         boolean popped = false;
@@ -2514,7 +2514,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public <T> T invoke(ForkJoinTask<T> task) {
+    public <T> T invoke(com.netty.network.util.internal.chmv8.ForkJoinTask<T> task) {
         if (task == null)
             throw new NullPointerException();
         externalPush(task);
@@ -2529,7 +2529,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public void execute(ForkJoinTask<?> task) {
+    public void execute(com.netty.network.util.internal.chmv8.ForkJoinTask<?> task) {
         if (task == null)
             throw new NullPointerException();
         externalPush(task);
@@ -2545,11 +2545,11 @@ public class ForkJoinPool extends AbstractExecutorService {
     public void execute(Runnable task) {
         if (task == null)
             throw new NullPointerException();
-        ForkJoinTask<?> job;
-        if (task instanceof ForkJoinTask<?>) // avoid re-wrap
-            job = (ForkJoinTask<?>) task;
+        com.netty.network.util.internal.chmv8.ForkJoinTask<?> job;
+        if (task instanceof com.netty.network.util.internal.chmv8.ForkJoinTask<?>) // avoid re-wrap
+            job = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>) task;
         else
-            job = new ForkJoinTask.RunnableExecuteAction(task);
+            job = new com.netty.network.util.internal.chmv8.ForkJoinTask.RunnableExecuteAction(task);
         externalPush(job);
     }
 
@@ -2562,7 +2562,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public <T> ForkJoinTask<T> submit(ForkJoinTask<T> task) {
+    public <T> com.netty.network.util.internal.chmv8.ForkJoinTask<T> submit(com.netty.network.util.internal.chmv8.ForkJoinTask<T> task) {
         if (task == null)
             throw new NullPointerException();
         externalPush(task);
@@ -2574,8 +2574,8 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public <T> ForkJoinTask<T> submit(Callable<T> task) {
-        ForkJoinTask<T> job = new ForkJoinTask.AdaptedCallable<T>(task);
+    public <T> com.netty.network.util.internal.chmv8.ForkJoinTask<T> submit(Callable<T> task) {
+        com.netty.network.util.internal.chmv8.ForkJoinTask<T> job = new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedCallable<T>(task);
         externalPush(job);
         return job;
     }
@@ -2585,8 +2585,8 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public <T> ForkJoinTask<T> submit(Runnable task, T result) {
-        ForkJoinTask<T> job = new ForkJoinTask.AdaptedRunnable<T>(task, result);
+    public <T> com.netty.network.util.internal.chmv8.ForkJoinTask<T> submit(Runnable task, T result) {
+        com.netty.network.util.internal.chmv8.ForkJoinTask<T> job = new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedRunnable<T>(task, result);
         externalPush(job);
         return job;
     }
@@ -2596,14 +2596,14 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    public ForkJoinTask<?> submit(Runnable task) {
+    public com.netty.network.util.internal.chmv8.ForkJoinTask<?> submit(Runnable task) {
         if (task == null)
             throw new NullPointerException();
-        ForkJoinTask<?> job;
-        if (task instanceof ForkJoinTask<?>) // avoid re-wrap
-            job = (ForkJoinTask<?>) task;
+        com.netty.network.util.internal.chmv8.ForkJoinTask<?> job;
+        if (task instanceof com.netty.network.util.internal.chmv8.ForkJoinTask<?>) // avoid re-wrap
+            job = (com.netty.network.util.internal.chmv8.ForkJoinTask<?>) task;
         else
-            job = new ForkJoinTask.AdaptedRunnableAction(task);
+            job = new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedRunnableAction(task);
         externalPush(job);
         return job;
     }
@@ -2621,12 +2621,12 @@ public class ForkJoinPool extends AbstractExecutorService {
         boolean done = false;
         try {
             for (Callable<T> t : tasks) {
-                ForkJoinTask<T> f = new ForkJoinTask.AdaptedCallable<T>(t);
+                com.netty.network.util.internal.chmv8.ForkJoinTask<T> f = new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedCallable<T>(t);
                 futures.add(f);
                 externalPush(f);
             }
             for (int i = 0, size = futures.size(); i < size; i++)
-                ((ForkJoinTask<?>)futures.get(i)).quietlyJoin();
+                ((com.netty.network.util.internal.chmv8.ForkJoinTask<?>)futures.get(i)).quietlyJoin();
             done = true;
             return futures;
         } finally {
@@ -2832,8 +2832,8 @@ public class ForkJoinPool extends AbstractExecutorService {
      *
      * @return the next submission, or {@code null} if none
      */
-    protected ForkJoinTask<?> pollSubmission() {
-        WorkQueue[] ws; WorkQueue w; ForkJoinTask<?> t;
+    protected com.netty.network.util.internal.chmv8.ForkJoinTask<?> pollSubmission() {
+        WorkQueue[] ws; WorkQueue w; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;
         if ((ws = workQueues) != null) {
             for (int i = 0; i < ws.length; i += 2) {
                 if ((w = ws[i]) != null && (t = w.poll()) != null)
@@ -2860,9 +2860,9 @@ public class ForkJoinPool extends AbstractExecutorService {
      * @param c the collection to transfer elements into
      * @return the number of elements transferred
      */
-    protected int drainTasksTo(Collection<? super ForkJoinTask<?>> c) {
+    protected int drainTasksTo(Collection<? super com.netty.network.util.internal.chmv8.ForkJoinTask<?>> c) {
         int count = 0;
-        WorkQueue[] ws; WorkQueue w; ForkJoinTask<?> t;
+        WorkQueue[] ws; WorkQueue w; com.netty.network.util.internal.chmv8.ForkJoinTask<?> t;
         if ((ws = workQueues) != null) {
             for (int i = 0; i < ws.length; ++i) {
                 if ((w = ws[i]) != null) {
@@ -2987,7 +2987,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * period after shutdown may indicate that submitted tasks have
      * ignored or suppressed interruption, or are waiting for I/O,
      * causing this executor not to properly terminate. (See the
-     * advisory notes for class {@link ForkJoinTask} stating that
+     * advisory notes for class {@link com.netty.network.util.internal.chmv8.ForkJoinTask} stating that
      * tasks should not normally entail blocking operations.  But if
      * they do, they must abort them on interrupt.)
      *
@@ -3051,7 +3051,7 @@ public class ForkJoinPool extends AbstractExecutorService {
 
     /**
      * If called by a ForkJoinTask operating in this pool, equivalent
-     * in effect to {@link ForkJoinTask#helpQuiesce}. Otherwise,
+     * in effect to {@link com.netty.network.util.internal.chmv8.ForkJoinTask#helpQuiesce}. Otherwise,
      * waits and/or attempts to assist performing tasks until this
      * pool {@link #isQuiescent} or the indicated timeout elapses.
      *
@@ -3082,7 +3082,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             }
             found = false;
             for (int j = (m + 1) << 2; j >= 0; --j) {
-                ForkJoinTask<?> t; WorkQueue q; int b;
+                com.netty.network.util.internal.chmv8.ForkJoinTask<?> t; WorkQueue q; int b;
                 if ((q = ws[r++ & m]) != null && (b = q.base) - q.top < 0) {
                     found = true;
                     if ((t = q.pollAt(b)) != null)
@@ -3182,7 +3182,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * arranges for a spare thread to be activated if necessary to
      * ensure sufficient parallelism while the current thread is blocked.
      *
-     * <p>If the caller is not a {@link ForkJoinTask}, this method is
+     * <p>If the caller is not a {@link com.netty.network.util.internal.chmv8.ForkJoinTask}, this method is
      * behaviorally equivalent to
      *  <pre> {@code
      * while (!blocker.isReleasable())
@@ -3224,11 +3224,11 @@ public class ForkJoinPool extends AbstractExecutorService {
     // implement RunnableFuture.
 
     protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T value) {
-        return new ForkJoinTask.AdaptedRunnable<T>(runnable, value);
+        return new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedRunnable<T>(runnable, value);
     }
 
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
-        return new ForkJoinTask.AdaptedCallable<T>(callable);
+        return new com.netty.network.util.internal.chmv8.ForkJoinTask.AdaptedCallable<T>(callable);
     }
 
     // Unsafe mechanics

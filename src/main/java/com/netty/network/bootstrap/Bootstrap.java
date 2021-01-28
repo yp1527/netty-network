@@ -13,18 +13,18 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.bootstrap;
+package com.netty.network.bootstrap;
 
 
-import org.jboss.netty.channel.*;
-import org.jboss.netty.resolver.AddressResolver;
-import org.jboss.netty.resolver.AddressResolverGroup;
-import org.jboss.netty.resolver.DefaultAddressResolverGroup;
-import org.jboss.netty.util.AttributeKey;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.FutureListener;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.resolver.AddressResolver;
+import com.netty.network.resolver.AddressResolverGroup;
+import com.netty.network.resolver.DefaultAddressResolverGroup;
+import com.netty.network.util.AttributeKey;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.FutureListener;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;

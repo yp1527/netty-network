@@ -13,10 +13,10 @@
 * License for the specific language governing permissions and limitations
 * under the License.
 */
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.InternalThreadLocalMap;
 
 /**
  * A special {@link Thread} that provides fast access to {@link FastThreadLocal} variables.

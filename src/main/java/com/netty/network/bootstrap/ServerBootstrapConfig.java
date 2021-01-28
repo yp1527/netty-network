@@ -13,15 +13,15 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.bootstrap;
+package com.netty.network.bootstrap;
 
 
-import org.jboss.netty.channel.ChannelHandler;
-import org.jboss.netty.channel.ChannelOption;
-import org.jboss.netty.channel.EventLoopGroup;
-import org.jboss.netty.channel.ServerChannel;
-import org.jboss.netty.util.AttributeKey;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.channel.ChannelHandler;
+import com.netty.network.channel.ChannelOption;
+import com.netty.network.channel.EventLoopGroup;
+import com.netty.network.channel.ServerChannel;
+import com.netty.network.util.AttributeKey;
+import com.netty.network.util.internal.StringUtil;
 
 import java.util.Map;
 

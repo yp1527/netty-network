@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.ReferenceCounted;
+import com.netty.network.util.ReferenceCounted;
 
 import java.io.IOException;
 import java.nio.channels.FileChannel;

@@ -16,6 +16,7 @@
 package com.netty.network.channel.pool;
 
 
+import com.netty.network.bootstrap.Bootstrap;
 import com.netty.network.channel.*;
 import com.netty.network.util.AttributeKey;
 import com.netty.network.util.concurrent.Future;
@@ -24,8 +25,6 @@ import com.netty.network.util.concurrent.Promise;
 import com.netty.network.util.internal.ObjectUtil;
 import com.netty.network.util.internal.PlatformDependent;
 import com.netty.network.util.internal.ThrowableUtil;
-import com.netty.network.bootstrap.Bootstrap;
-import org.jboss.netty.channel.*;
 
 import java.util.Deque;
 

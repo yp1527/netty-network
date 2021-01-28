@@ -14,12 +14,12 @@
  * under the License.
  */
 
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.ReferenceCounted;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.ReferenceCounted;
+import com.netty.network.util.internal.StringUtil;
 
 import java.net.SocketAddress;
 

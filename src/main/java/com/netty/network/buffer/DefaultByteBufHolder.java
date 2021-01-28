@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.IllegalReferenceCountException;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.IllegalReferenceCountException;
+import com.netty.network.util.internal.StringUtil;
 
 /**
  * Default implementation of a {@link ByteBufHolder} that holds it's data in a {@link ByteBuf}.

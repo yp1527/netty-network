@@ -13,14 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.codec;
+package com.netty.network.codec;
 
-import org.jboss.netty.util.Recycler;
+import com.netty.network.util.Recycler;
+import com.netty.network.util.internal.ObjectUtil;
 
 import java.util.AbstractList;
 import java.util.RandomAccess;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 /**
  * Special {@link AbstractList} implementation which is used within our codec base classes.
@@ -61,7 +60,7 @@ final class CodecOutputList extends AbstractList<Object> implements RandomAccess
 
     @Override
     public boolean add(Object element) {
-        checkNotNull(element, "element");
+        ObjectUtil.checkNotNull(element, "element");
         try {
             insert(size, element);
         } catch (IndexOutOfBoundsException ignore) {
@@ -75,7 +74,7 @@ final class CodecOutputList extends AbstractList<Object> implements RandomAccess
 
     @Override
     public Object set(int index, Object element) {
-        checkNotNull(element, "element");
+        ObjectUtil.checkNotNull(element, "element");
         checkIndex(index);
 
         Object old = array[index];
@@ -85,7 +84,7 @@ final class CodecOutputList extends AbstractList<Object> implements RandomAccess
 
     @Override
     public void add(int index, Object element) {
-        checkNotNull(element, "element");
+        ObjectUtil.checkNotNull(element, "element");
         checkIndex(index);
 
         if (size == array.length) {

@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 /**
  * Creates a new {@link Channel}.
  */
 @SuppressWarnings({ "ClassNameSameAsAncestorName", "deprecation" })
-public interface ChannelFactory<T extends Channel> extends org.jboss.netty.bootstrap.ChannelFactory<T> {
+public interface ChannelFactory<T extends Channel> extends com.netty.network.bootstrap.ChannelFactory<T> {
     /**
      * Creates a new channel.
      */

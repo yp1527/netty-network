@@ -13,14 +13,14 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.nio;
+package com.netty.network.channel.nio;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.channel.socket.ChannelInputShutdownEvent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.channel.*;
+import com.netty.network.channel.socket.ChannelInputShutdownEvent;
+import com.netty.network.util.internal.StringUtil;
 
 import java.io.IOException;
 import java.nio.channels.SelectableChannel;

@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.bootstrap;
+package com.netty.network.bootstrap;
 
 
-import org.jboss.netty.channel.Channel;
+import com.netty.network.channel.Channel;
 
 /**
  * @deprecated Use {@link io.netty.channel.ChannelFactory} instead.

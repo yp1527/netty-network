@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.channel.nio;
+package com.netty.network.channel.nio;
 
 import java.nio.channels.SelectionKey;
 import java.util.AbstractSet;

@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.InternalThreadLocalMap;
 
 import java.util.Map;
 

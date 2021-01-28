@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
 /**
  * Provides methods for {@link PriorityQueue} to maintain internal state. These methods should generally not be used

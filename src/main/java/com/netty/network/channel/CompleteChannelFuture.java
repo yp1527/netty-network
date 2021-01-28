@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.CompleteFuture;
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.GenericFutureListener;
+import com.netty.network.util.concurrent.CompleteFuture;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.GenericFutureListener;
 
 /**
  * A skeletal {@link ChannelFuture} implementation which represents a

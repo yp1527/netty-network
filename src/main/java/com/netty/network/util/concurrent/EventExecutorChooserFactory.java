@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.UnstableApi;
+import com.netty.network.util.internal.UnstableApi;
 
 /**
  * Factory that creates new {@link EventExecutorChooser}s.

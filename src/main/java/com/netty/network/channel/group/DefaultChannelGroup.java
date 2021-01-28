@@ -13,23 +13,18 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.group;
+package com.netty.network.channel.group;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufHolder;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufHolder;
+import com.netty.network.channel.*;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
 
-import java.util.AbstractSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 

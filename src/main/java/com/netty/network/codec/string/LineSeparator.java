@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.codec.string;
+package com.netty.network.codec.string;
 
 
-import org.jboss.netty.buffer.ByteBufUtil;
-import org.jboss.netty.util.CharsetUtil;
-import org.jboss.netty.util.internal.ObjectUtil;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.CharsetUtil;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.buffer.ByteBufUtil;
 
 /**
  * A class to represent line separators in different environments.

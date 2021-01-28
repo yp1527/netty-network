@@ -16,10 +16,9 @@
 package com.netty.network.channel.socket;
 
 
+import com.netty.network.buffer.ByteBufAllocator;
 import com.netty.network.channel.*;
 import com.netty.network.util.internal.PlatformDependent;
-import com.netty.network.buffer.ByteBufAllocator;
-import org.jboss.netty.channel.*;
 
 import java.net.Socket;
 import java.net.SocketException;

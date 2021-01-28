@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBufAllocator;
+import com.netty.network.buffer.ByteBufAllocator;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;

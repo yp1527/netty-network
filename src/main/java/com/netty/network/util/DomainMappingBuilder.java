@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 /**
  * Builder for immutable {@link DomainNameMapping} instances.

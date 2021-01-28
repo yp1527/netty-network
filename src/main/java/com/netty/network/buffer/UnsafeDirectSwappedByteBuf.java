@@ -14,10 +14,10 @@
 * under the License.
 */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.PlatformDependent;
 
 /**
  * Special {@link SwappedByteBuf} for {@link ByteBuf}s that are backed by a {@code memoryAddress}.

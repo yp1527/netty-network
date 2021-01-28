@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.group;
+package com.netty.network.channel.group;
 
 
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelFuture;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.GenericFutureListener;
+import com.netty.network.channel.Channel;
+import com.netty.network.channel.ChannelFuture;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.GenericFutureListener;
 
 import java.util.Iterator;
 

@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.GenericFutureListener;
-import org.jboss.netty.util.concurrent.ProgressivePromise;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.GenericFutureListener;
+import com.netty.network.util.concurrent.ProgressivePromise;
 
 /**
  * Special {@link ChannelPromise} which will be notified once the associated bytes is transferring.

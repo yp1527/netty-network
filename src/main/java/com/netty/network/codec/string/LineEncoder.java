@@ -13,16 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.codec.string;
+package com.netty.network.codec.string;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufUtil;
-import org.jboss.netty.channel.ChannelHandler;
-import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.codec.MessageToMessageEncoder;
-import org.jboss.netty.util.CharsetUtil;
-import org.jboss.netty.util.internal.ObjectUtil;
+import com.netty.network.codec.MessageToMessageEncoder;
+import com.netty.network.util.CharsetUtil;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufUtil;
+import com.netty.network.channel.ChannelHandler;
+import com.netty.network.channel.ChannelHandlerContext;
 
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;

@@ -14,15 +14,15 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.concurrent.FastThreadLocal;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.concurrent.FastThreadLocal;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.util.internal.SystemPropertyUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;

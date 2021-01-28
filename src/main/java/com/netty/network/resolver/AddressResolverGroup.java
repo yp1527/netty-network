@@ -14,14 +14,14 @@
  * under the License.
  */
 
-package org.jboss.netty.resolver;
+package com.netty.network.resolver;
 
 
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.FutureListener;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.FutureListener;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.io.Closeable;
 import java.net.SocketAddress;

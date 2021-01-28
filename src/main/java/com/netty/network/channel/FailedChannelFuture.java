@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.internal.PlatformDependent;
 
 /**
  * The {@link CompleteChannelFuture} which is failed already.  It is

@@ -13,14 +13,14 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.socket;
+package com.netty.network.channel.socket;
 
 
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.channel.ChannelConfig;
-import org.jboss.netty.channel.MessageSizeEstimator;
-import org.jboss.netty.channel.RecvByteBufAllocator;
-import org.jboss.netty.channel.WriteBufferWaterMark;
+import com.netty.network.channel.MessageSizeEstimator;
+import com.netty.network.channel.RecvByteBufAllocator;
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.channel.ChannelConfig;
+import com.netty.network.channel.WriteBufferWaterMark;
 
 import java.net.ServerSocket;
 import java.net.StandardSocketOptions;

@@ -17,8 +17,8 @@ package com.netty.network.util;
 
 
 import com.netty.network.util.internal.StringUtil;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 /**
  * Collection of method to handle objects that may implement {@link ReferenceCounted}.

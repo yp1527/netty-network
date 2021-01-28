@@ -15,8 +15,8 @@
  */
 package com.netty.network.util.internal;
 
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Constructor;

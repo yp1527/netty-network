@@ -20,8 +20,8 @@ package com.netty.network.util;
 import com.netty.network.util.internal.ObjectUtil;
 import com.netty.network.util.internal.PlatformDependent;
 import com.netty.network.util.internal.SystemPropertyUtil;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.security.AccessController;

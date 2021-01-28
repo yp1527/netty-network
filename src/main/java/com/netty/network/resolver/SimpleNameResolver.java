@@ -14,16 +14,15 @@
  * under the License.
  */
 
-package org.jboss.netty.resolver;
+package com.netty.network.resolver;
 
 
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.Promise;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.Promise;
+import com.netty.network.util.internal.ObjectUtil;
 
 import java.util.List;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 /**
  * A skeletal {@link NameResolver} implementation.
@@ -37,7 +36,7 @@ public abstract class SimpleNameResolver<T> implements NameResolver<T> {
      *                 by {@link #resolve(String)}
      */
     protected SimpleNameResolver(EventExecutor executor) {
-        this.executor = checkNotNull(executor, "executor");
+        this.executor = ObjectUtil.checkNotNull(executor, "executor");
     }
 
     /**
@@ -56,8 +55,8 @@ public abstract class SimpleNameResolver<T> implements NameResolver<T> {
 
     @Override
     public Future<T> resolve(String inetHost, Promise<T> promise) {
-        checkNotNull(inetHost, "inetHost");
-        checkNotNull(promise, "promise");
+        ObjectUtil.checkNotNull(inetHost, "inetHost");
+        ObjectUtil.checkNotNull(promise, "promise");
 
         try {
             doResolve(inetHost, promise);
@@ -75,8 +74,8 @@ public abstract class SimpleNameResolver<T> implements NameResolver<T> {
 
     @Override
     public Future<List<T>> resolveAll(String inetHost, Promise<List<T>> promise) {
-        checkNotNull(inetHost, "inetHost");
-        checkNotNull(promise, "promise");
+        ObjectUtil.checkNotNull(inetHost, "inetHost");
+        ObjectUtil.checkNotNull(promise, "promise");
 
         try {
             doResolveAll(inetHost, promise);

@@ -14,14 +14,14 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.MathUtil;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.internal.MathUtil;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.SystemPropertyUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
@@ -31,7 +31,7 @@ import java.util.EnumSet;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static org.jboss.netty.util.internal.StringUtil.*;
+import static com.netty.network.util.internal.StringUtil.*;
 
 
 public class ResourceLeakDetector<T> {

@@ -14,15 +14,15 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.concurrent.DefaultThreadFactory;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.concurrent.DefaultThreadFactory;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.util.internal.SystemPropertyUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;

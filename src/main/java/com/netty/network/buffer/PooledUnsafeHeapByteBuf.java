@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.Recycler;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.Recycler;
+import com.netty.network.util.internal.PlatformDependent;
 
 final class PooledUnsafeHeapByteBuf extends PooledHeapByteBuf {
 

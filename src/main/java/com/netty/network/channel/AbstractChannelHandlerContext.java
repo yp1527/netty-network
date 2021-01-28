@@ -16,15 +16,13 @@
 package com.netty.network.channel;
 
 
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.*;
 import com.netty.network.util.concurrent.EventExecutor;
 import com.netty.network.util.concurrent.OrderedEventExecutor;
 import com.netty.network.util.internal.*;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
-import com.netty.network.buffer.ByteBufAllocator;
-import org.jboss.netty.util.*;
-import org.jboss.netty.util.internal.*;
 
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;

@@ -13,27 +13,24 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.nio;
+package com.netty.network.channel.nio;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.buffer.ByteBufUtil;
-import org.jboss.netty.buffer.Unpooled;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.ReferenceCounted;
-import org.jboss.netty.util.internal.ThrowableUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.buffer.ByteBufUtil;
+import com.netty.network.buffer.Unpooled;
+import com.netty.network.channel.Channel;
+import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.ReferenceCounted;
+import com.netty.network.util.internal.ThrowableUtil;
 
 import java.io.IOException;
 import java.net.SocketAddress;
-import java.nio.channels.CancelledKeyException;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.ConnectionPendingException;
-import java.nio.channels.SelectableChannel;
-import java.nio.channels.SelectionKey;
+import java.nio.channels.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 

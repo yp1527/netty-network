@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 /**
  * An {@link IllegalStateException} which is raised when a user attempts to access a {@link ReferenceCounted} whose

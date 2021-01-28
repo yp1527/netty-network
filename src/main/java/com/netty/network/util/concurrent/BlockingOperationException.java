@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 /**
  * An {@link IllegalStateException} which is raised when a user performed a blocking operation

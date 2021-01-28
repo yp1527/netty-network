@@ -13,13 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufAllocator;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufAllocator;
 
 /**
  * Allocates a new receive buffer whose capacity is probably large enough to read all inbound data and small enough
@@ -110,7 +109,7 @@ public interface RecvByteBufAllocator {
         private final Handle delegate;
 
         public DelegatingHandle(Handle delegate) {
-            this.delegate = checkNotNull(delegate, "delegate");
+            this.delegate = ObjectUtil.checkNotNull(delegate, "delegate");
         }
 
         /**

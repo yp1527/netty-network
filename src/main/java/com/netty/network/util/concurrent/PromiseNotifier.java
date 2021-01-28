@@ -13,14 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.PromiseNotificationUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.PromiseNotificationUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 /**
  * {@link GenericFutureListener} implementation which takes other {@link Promise}s
@@ -53,7 +52,7 @@ public class PromiseNotifier<V, F extends Future<V>> implements GenericFutureLis
      */
     @SafeVarargs
     public PromiseNotifier(boolean logNotifyFailure, Promise<? super V>... promises) {
-        checkNotNull(promises, "promises");
+        ObjectUtil.checkNotNull(promises, "promises");
         for (Promise<? super V> promise: promises) {
             if (promise == null) {
                 throw new IllegalArgumentException("promises contains null Promise");

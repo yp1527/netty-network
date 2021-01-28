@@ -37,7 +37,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-package com.netty.network.util.internal.logging;
+package com.netty.network.logging;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

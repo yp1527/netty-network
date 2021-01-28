@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.socket.nio;
+package com.netty.network.channel.socket.nio;
 
 
-import org.jboss.netty.channel.ChannelException;
-import org.jboss.netty.channel.socket.DatagramChannelConfig;
-import org.jboss.netty.channel.socket.DefaultDatagramChannelConfig;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.channel.ChannelException;
+import com.netty.network.channel.socket.DatagramChannelConfig;
+import com.netty.network.channel.socket.DefaultDatagramChannelConfig;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.lang.reflect.Method;
 import java.net.InetAddress;

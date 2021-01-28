@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;

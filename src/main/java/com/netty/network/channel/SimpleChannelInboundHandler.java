@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.internal.TypeParameterMatcher;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.internal.TypeParameterMatcher;
 
 /**
  * {@link ChannelInboundHandlerAdapter} which allows to explicit only handle a specific type of messages.

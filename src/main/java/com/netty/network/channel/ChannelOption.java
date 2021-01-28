@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.util.AbstractConstant;
-import org.jboss.netty.util.ConstantPool;
+import com.netty.network.util.AbstractConstant;
+import com.netty.network.util.ConstantPool;
+import com.netty.network.buffer.ByteBufAllocator;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

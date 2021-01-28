@@ -13,10 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.internal.EmptyArrays;
+import com.netty.network.util.internal.EmptyArrays;
+import com.netty.network.util.internal.ObjectUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,8 +35,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 
 /**
@@ -193,7 +192,7 @@ public class CompositeByteBuf extends AbstractReferenceCountedByteBuf implements
      * {@link CompositeByteBuf}.
      */
     public CompositeByteBuf addComponent(boolean increaseWriterIndex, ByteBuf buffer) {
-        checkNotNull(buffer, "buffer");
+        ObjectUtil.checkNotNull(buffer, "buffer");
         addComponent0(increaseWriterIndex, components.size(), buffer);
         consolidateIfNeeded();
         return this;
@@ -239,7 +238,7 @@ public class CompositeByteBuf extends AbstractReferenceCountedByteBuf implements
      * {@link CompositeByteBuf}.
      */
     public CompositeByteBuf addComponent(boolean increaseWriterIndex, int cIndex, ByteBuf buffer) {
-        checkNotNull(buffer, "buffer");
+        ObjectUtil.checkNotNull(buffer, "buffer");
         addComponent0(increaseWriterIndex, cIndex, buffer);
         consolidateIfNeeded();
         return this;
@@ -307,7 +306,7 @@ public class CompositeByteBuf extends AbstractReferenceCountedByteBuf implements
     }
 
     private int addComponents0(boolean increaseWriterIndex, int cIndex, ByteBuf[] buffers, int offset, int len) {
-        checkNotNull(buffers, "buffers");
+        ObjectUtil.checkNotNull(buffers, "buffers");
         int i = offset;
         try {
             checkComponentIndex(cIndex);
@@ -365,7 +364,7 @@ public class CompositeByteBuf extends AbstractReferenceCountedByteBuf implements
             // If buffers also implements ByteBuf (e.g. CompositeByteBuf), it has to go to addComponent(ByteBuf).
             return addComponent0(increaseIndex, cIndex, (ByteBuf) buffers);
         }
-        checkNotNull(buffers, "buffers");
+        ObjectUtil.checkNotNull(buffers, "buffers");
 
         if (!(buffers instanceof Collection)) {
             List<ByteBuf> list = new ArrayList<ByteBuf>();

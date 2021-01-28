@@ -17,10 +17,9 @@ package com.netty.network.bootstrap;
 
 
 import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.AttributeKey;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
-import org.jboss.netty.channel.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

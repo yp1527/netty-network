@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 /**
  * A subtype of {@link GenericFutureListener} that hides type parameter for convenience.

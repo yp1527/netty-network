@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.internal.StringUtil;
 
 import java.util.Locale;
 import java.util.concurrent.ThreadFactory;

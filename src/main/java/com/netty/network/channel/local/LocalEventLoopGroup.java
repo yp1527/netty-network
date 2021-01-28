@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.local;
+package com.netty.network.channel.local;
 
 
-import org.jboss.netty.channel.DefaultEventLoopGroup;
+import com.netty.network.channel.DefaultEventLoopGroup;
 
 import java.util.concurrent.ThreadFactory;
 

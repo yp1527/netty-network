@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.PromiseAggregator;
+import com.netty.network.util.concurrent.PromiseAggregator;
 
 /**
  * @deprecated Use {@link PromiseCombiner}

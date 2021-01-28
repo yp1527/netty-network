@@ -13,26 +13,22 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
 
-import org.jboss.netty.util.concurrent.*;
-import org.jboss.netty.util.internal.EmptyArrays;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.ReadOnlyIterator;
-import org.jboss.netty.util.internal.ThrowableUtil;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.*;
+import com.netty.network.util.internal.EmptyArrays;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.ReadOnlyIterator;
+import com.netty.network.util.internal.ThrowableUtil;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * An {@link EventLoopGroup} that creates one {@link EventLoop} per {@link Channel}.

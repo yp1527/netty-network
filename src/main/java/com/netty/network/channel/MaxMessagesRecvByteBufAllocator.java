@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 /**
  * {@link RecvByteBufAllocator} that limits the number of read operations that will be attempted when a read operation

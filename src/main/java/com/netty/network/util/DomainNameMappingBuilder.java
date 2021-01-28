@@ -14,14 +14,14 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
+import static com.netty.network.util.internal.ObjectUtil.checkNotNull;
 
 /**
  * Builder for immutable {@link DomainNameMapping} instances.

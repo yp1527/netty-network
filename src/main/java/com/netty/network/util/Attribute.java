@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 /**
  * An attribute which allows to store a value reference. It may be updated atomically and so is thread-safe.

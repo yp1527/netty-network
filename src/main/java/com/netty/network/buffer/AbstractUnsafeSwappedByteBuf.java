@@ -13,14 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.nio.ByteOrder;
-
-import static org.jboss.netty.util.internal.PlatformDependent.BIG_ENDIAN_NATIVE_ORDER;
 
 
 /**
@@ -34,7 +32,7 @@ abstract class AbstractUnsafeSwappedByteBuf extends SwappedByteBuf {
         super(buf);
         assert PlatformDependent.isUnaligned();
         wrapped = buf;
-        nativeByteOrder = BIG_ENDIAN_NATIVE_ORDER == (order() == ByteOrder.BIG_ENDIAN);
+        nativeByteOrder = PlatformDependent.BIG_ENDIAN_NATIVE_ORDER == (order() == ByteOrder.BIG_ENDIAN);
     }
 
     @Override

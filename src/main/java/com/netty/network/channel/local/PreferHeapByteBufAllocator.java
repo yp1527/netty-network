@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.local;
+package com.netty.network.channel.local;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.buffer.CompositeByteBuf;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.buffer.CompositeByteBuf;
 
 /**
  * Wraps another {@link ByteBufAllocator} and use heapbuffers everywhere except when a direct buffer is explicit

@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 public class DefaultProgressivePromise<V> extends DefaultPromise<V> implements ProgressivePromise<V> {
 

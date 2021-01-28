@@ -20,10 +20,10 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package org.jboss.netty.util.internal.chmv8;
+package com.netty.network.util.internal.chmv8;
 
-import org.jboss.netty.util.internal.IntegerHolder;
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.IntegerHolder;
+import com.netty.network.util.internal.InternalThreadLocalMap;
 
 import java.io.ObjectStreamField;
 import java.io.Serializable;

@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.AbstractEventExecutor;
+import com.netty.network.util.concurrent.AbstractEventExecutor;
 
 /**
  * Skeletal implementation of {@link EventLoop}.

@@ -14,11 +14,11 @@
  * under the License.
  */
 
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
-import org.jboss.netty.util.NetUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.NetUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
 import java.util.Iterator;
 

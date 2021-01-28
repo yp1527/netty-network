@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.PromiseNotifier;
+import com.netty.network.util.concurrent.PromiseNotifier;
 
 /**
  * ChannelFutureListener implementation which takes other {@link ChannelPromise}(s) and notifies them on completion.

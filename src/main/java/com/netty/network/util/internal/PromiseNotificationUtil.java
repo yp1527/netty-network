@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
-import org.jboss.netty.util.concurrent.Promise;
-import org.jboss.netty.util.internal.logging.InternalLogger;
+import com.netty.network.util.concurrent.Promise;
+import com.netty.network.logging.InternalLogger;
 
 /**
  * Internal utilities to notify {@link Promise}s.

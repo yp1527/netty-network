@@ -1,10 +1,10 @@
 
-package org.jboss.netty.channel.embedded;
+package com.netty.network.channel.embedded;
 
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.concurrent.AbstractScheduledEventExecutor;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.internal.ObjectUtil;
+import com.netty.network.channel.*;
+import com.netty.network.util.concurrent.AbstractScheduledEventExecutor;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.internal.ObjectUtil;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

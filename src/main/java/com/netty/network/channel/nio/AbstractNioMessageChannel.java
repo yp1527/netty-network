@@ -17,7 +17,6 @@ package com.netty.network.channel.nio;
 
 
 import com.netty.network.channel.*;
-import org.jboss.netty.channel.*;
 
 import java.io.IOException;
 import java.net.PortUnreachableException;

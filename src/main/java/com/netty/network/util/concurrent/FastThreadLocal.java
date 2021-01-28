@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.util.Collections;
 import java.util.IdentityHashMap;

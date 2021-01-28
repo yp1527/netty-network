@@ -16,19 +16,14 @@
 package com.netty.network.channel.socket;
 
 
-import com.netty.network.channel.*;
-import com.netty.network.util.internal.PlatformDependent;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
 import com.netty.network.buffer.ByteBufAllocator;
-import org.jboss.netty.channel.*;
+import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.io.IOException;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
-import java.net.NetworkInterface;
-import java.net.SocketException;
+import java.net.*;
 import java.util.Map;
 
 

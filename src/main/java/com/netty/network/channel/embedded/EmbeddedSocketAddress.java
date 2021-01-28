@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.embedded;
+package com.netty.network.channel.embedded;
 
 import java.net.SocketAddress;
 

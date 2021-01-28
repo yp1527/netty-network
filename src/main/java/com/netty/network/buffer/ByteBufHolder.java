@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.ReferenceCounted;
+import com.netty.network.util.ReferenceCounted;
 
 /**
  * A packet which is send or receive.

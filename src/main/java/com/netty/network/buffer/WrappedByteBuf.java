@@ -14,11 +14,11 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.ByteProcessor;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.ByteProcessor;
+import com.netty.network.util.internal.StringUtil;
 
 import java.io.IOException;
 import java.io.InputStream;

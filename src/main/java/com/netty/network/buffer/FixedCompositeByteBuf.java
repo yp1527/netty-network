@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.internal.EmptyArrays;
-import org.jboss.netty.util.internal.RecyclableArrayList;
+import com.netty.network.util.internal.EmptyArrays;
+import com.netty.network.util.internal.RecyclableArrayList;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -13,11 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.ByteProcessor;
-import org.jboss.netty.util.CharsetUtil;
+import com.netty.network.util.ByteProcessor;
+import com.netty.network.util.CharsetUtil;
+import com.netty.network.util.internal.MathUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,8 +29,6 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.GatheringByteChannel;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.charset.Charset;
-
-import static org.jboss.netty.util.internal.MathUtil.isOutOfBounds;
 
 
 abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteBuf {
@@ -492,7 +491,7 @@ abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteBuf {
     }
 
     static void checkSliceOutOfBounds(int index, int length, ByteBuf buffer) {
-        if (isOutOfBounds(index, length, buffer.capacity())) {
+        if (MathUtil.isOutOfBounds(index, length, buffer.capacity())) {
             throw new IndexOutOfBoundsException(buffer + ".slice(" + index + ", " + length + ')');
         }
     }

@@ -16,8 +16,8 @@
 package com.netty.network.util.internal;
 
 import com.netty.network.util.CharsetUtil;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.internal.chmv8.ConcurrentHashMapV8;
 import com.netty.network.util.internal.chmv8.LongAdderV8;
 import org.jctools.queues.MpscArrayQueue;

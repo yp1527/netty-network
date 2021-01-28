@@ -16,13 +16,12 @@
 package com.netty.network.channel.embedded;
 
 import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.ReferenceCountUtil;
 import com.netty.network.util.internal.ObjectUtil;
 import com.netty.network.util.internal.PlatformDependent;
 import com.netty.network.util.internal.RecyclableArrayList;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
-import org.jboss.netty.channel.*;
 
 import java.net.SocketAddress;
 import java.nio.channels.ClosedChannelException;

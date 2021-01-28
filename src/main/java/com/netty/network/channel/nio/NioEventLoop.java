@@ -13,16 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.nio;
+package com.netty.network.channel.nio;
 
 
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.IntSupplier;
-import org.jboss.netty.util.concurrent.RejectedExecutionHandler;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.channel.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.IntSupplier;
+import com.netty.network.util.concurrent.RejectedExecutionHandler;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.SystemPropertyUtil;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -33,12 +33,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.spi.SelectorProvider;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;

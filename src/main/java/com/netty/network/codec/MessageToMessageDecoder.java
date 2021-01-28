@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.codec;
+package com.netty.network.codec;
 
 
-import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.channel.ChannelInboundHandlerAdapter;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.internal.TypeParameterMatcher;
+import com.netty.network.channel.ChannelHandlerContext;
+import com.netty.network.channel.ChannelInboundHandlerAdapter;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.internal.TypeParameterMatcher;
 
 import java.util.List;
 

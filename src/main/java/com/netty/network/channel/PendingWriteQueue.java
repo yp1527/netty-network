@@ -13,14 +13,14 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.Recycler;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.concurrent.PromiseCombiner;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.Recycler;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.concurrent.PromiseCombiner;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 /**
  * A queue of write operations which are pending for later execution. It also updates the

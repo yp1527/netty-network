@@ -20,7 +20,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package org.jboss.netty.util.internal.chmv8;
+package com.netty.network.util.internal.chmv8;
 
 import java.util.concurrent.RecursiveAction;
 

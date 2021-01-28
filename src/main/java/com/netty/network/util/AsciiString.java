@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.EmptyArrays;
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.EmptyArrays;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -30,8 +30,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import static org.jboss.netty.util.internal.MathUtil.isOutOfBounds;
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
+import static com.netty.network.util.internal.MathUtil.isOutOfBounds;
+import static com.netty.network.util.internal.ObjectUtil.checkNotNull;
 
 
 /**

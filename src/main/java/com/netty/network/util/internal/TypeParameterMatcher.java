@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;

@@ -13,19 +13,20 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.AsciiString;
-import org.jboss.netty.util.ByteProcessor;
-import org.jboss.netty.util.CharsetUtil;
-import org.jboss.netty.util.Recycler;
-import org.jboss.netty.util.concurrent.FastThreadLocal;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.AsciiString;
+import com.netty.network.util.ByteProcessor;
+import com.netty.network.util.CharsetUtil;
+import com.netty.network.util.Recycler;
+import com.netty.network.util.concurrent.FastThreadLocal;
+import com.netty.network.util.internal.*;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.util.internal.SystemPropertyUtil;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -33,11 +34,6 @@ import java.nio.CharBuffer;
 import java.nio.charset.*;
 import java.util.Arrays;
 import java.util.Locale;
-
-import static org.jboss.netty.util.internal.MathUtil.isOutOfBounds;
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
-import static org.jboss.netty.util.internal.StringUtil.NEWLINE;
-import static org.jboss.netty.util.internal.StringUtil.isSurrogate;
 
 
 /**
@@ -436,7 +432,7 @@ public final class ByteBufUtil {
             } else if (c < 0x800) {
                 buffer._setByte(writerIndex++, (byte) (0xc0 | (c >> 6)));
                 buffer._setByte(writerIndex++, (byte) (0x80 | (c & 0x3f)));
-            } else if (isSurrogate(c)) {
+            } else if (StringUtil.isSurrogate(c)) {
                 if (!Character.isHighSurrogate(c)) {
                     buffer._setByte(writerIndex++, WRITE_UTF_UNKNOWN);
                     continue;
@@ -679,7 +675,7 @@ public final class ByteBufUtil {
      * If {@code copy} is false the underlying storage will be shared, if possible.
      */
     public static byte[] getBytes(ByteBuf buf, int start, int length, boolean copy) {
-        if (isOutOfBounds(start, length, buf.capacity())) {
+        if (MathUtil.isOutOfBounds(start, length, buf.capacity())) {
             throw new IndexOutOfBoundsException("expected: " + "0 <= start(" + start + ") <= start + length(" + length
                     + ") <= " + "buf.capacity(" + buf.capacity() + ')');
         }
@@ -707,12 +703,12 @@ public final class ByteBufUtil {
      * @param length the number of characters to copy.
      */
     public static void copy(AsciiString src, int srcIdx, ByteBuf dst, int dstIdx, int length) {
-        if (isOutOfBounds(srcIdx, length, src.length())) {
+        if (MathUtil.isOutOfBounds(srcIdx, length, src.length())) {
             throw new IndexOutOfBoundsException("expected: " + "0 <= srcIdx(" + srcIdx + ") <= srcIdx + length("
                             + length + ") <= srcLen(" + src.length() + ')');
         }
 
-        checkNotNull(dst, "dst").setBytes(dstIdx, src.array(), srcIdx + src.arrayOffset(), length);
+        ObjectUtil.checkNotNull(dst, "dst").setBytes(dstIdx, src.array(), srcIdx + src.arrayOffset(), length);
     }
 
     /**
@@ -723,12 +719,12 @@ public final class ByteBufUtil {
      * @param length the number of characters to copy.
      */
     public static void copy(AsciiString src, int srcIdx, ByteBuf dst, int length) {
-        if (isOutOfBounds(srcIdx, length, src.length())) {
+        if (MathUtil.isOutOfBounds(srcIdx, length, src.length())) {
             throw new IndexOutOfBoundsException("expected: " + "0 <= srcIdx(" + srcIdx + ") <= srcIdx + length("
                             + length + ") <= srcLen(" + src.length() + ')');
         }
 
-        checkNotNull(dst, "dst").writeBytes(src.array(), srcIdx + src.arrayOffset(), length);
+        ObjectUtil.checkNotNull(dst, "dst").writeBytes(src.array(), srcIdx + src.arrayOffset(), length);
     }
 
     /**
@@ -795,7 +791,7 @@ public final class ByteBufUtil {
             // Generate the lookup table for the start-offset header in each row (up to 64KiB).
             for (i = 0; i < HEXDUMP_ROWPREFIXES.length; i ++) {
                 StringBuilder buf = new StringBuilder(12);
-                buf.append(NEWLINE);
+                buf.append(StringUtil.NEWLINE);
                 buf.append(Long.toHexString(i << 4 & 0xFFFFFFFFL | 0x100000000L));
                 buf.setCharAt(buf.length() - 9, '|');
                 buf.append('|');
@@ -883,7 +879,7 @@ public final class ByteBufUtil {
         }
 
         private static void appendPrettyHexDump(StringBuilder dump, ByteBuf buf, int offset, int length) {
-            if (isOutOfBounds(offset, length, buf.capacity())) {
+            if (MathUtil.isOutOfBounds(offset, length, buf.capacity())) {
                 throw new IndexOutOfBoundsException(
                         "expected: " + "0 <= offset(" + offset + ") <= offset + length(" + length
                                                     + ") <= " + "buf.capacity(" + buf.capacity() + ')');
@@ -893,8 +889,8 @@ public final class ByteBufUtil {
             }
             dump.append(
                               "         +-------------------------------------------------+" +
-                    NEWLINE + "         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |" +
-                    NEWLINE + "+--------+-------------------------------------------------+----------------+");
+                    StringUtil.NEWLINE + "         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |" +
+                    StringUtil.NEWLINE + "+--------+-------------------------------------------------+----------------+");
 
             final int startIndex = offset;
             final int fullRows = length >>> 4;
@@ -942,7 +938,7 @@ public final class ByteBufUtil {
                 dump.append('|');
             }
 
-            dump.append(NEWLINE +
+            dump.append(StringUtil.NEWLINE +
                         "+--------+-------------------------------------------------+----------------+");
         }
 
@@ -950,7 +946,7 @@ public final class ByteBufUtil {
             if (row < HEXDUMP_ROWPREFIXES.length) {
                 dump.append(HEXDUMP_ROWPREFIXES[row]);
             } else {
-                dump.append(NEWLINE);
+                dump.append(StringUtil.NEWLINE);
                 dump.append(Long.toHexString(rowStartIndex & 0xFFFFFFFFL | 0x100000000L));
                 dump.setCharAt(dump.length() - 9, '|');
                 dump.append('|');
@@ -1048,8 +1044,8 @@ public final class ByteBufUtil {
      * @throws IndexOutOfBoundsException if {@code index} + {@code length} is greater than {@code buf.readableBytes}
      */
     public static boolean isText(ByteBuf buf, int index, int length, Charset charset) {
-        checkNotNull(buf, "buf");
-        checkNotNull(charset, "charset");
+        ObjectUtil.checkNotNull(buf, "buf");
+        ObjectUtil.checkNotNull(charset, "charset");
         final int maxIndex = buf.readerIndex() + buf.readableBytes();
         if (index < 0 || length < 0 || index > maxIndex - length) {
             throw new IndexOutOfBoundsException("index: " + index + " length: " + length);

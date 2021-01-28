@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.resolver;
+package com.netty.network.resolver;
 
 
-import org.jboss.netty.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.EventExecutor;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;

@@ -1,4 +1,4 @@
-package com.netty.network.test;
+package com.netty.network.example;
 
 
 import com.netty.network.channel.ChannelInitializer;

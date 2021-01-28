@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.internal.StringUtil;
 
 import java.net.IDN;
 import java.util.Collections;
@@ -25,8 +25,8 @@ import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
-import static org.jboss.netty.util.internal.StringUtil.commonSuffixOfLength;
+import static com.netty.network.util.internal.ObjectUtil.checkNotNull;
+import static com.netty.network.util.internal.StringUtil.commonSuffixOfLength;
 
 
 /**

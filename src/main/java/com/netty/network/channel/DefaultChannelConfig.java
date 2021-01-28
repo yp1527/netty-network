@@ -13,20 +13,18 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.buffer.ByteBufAllocator;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-import static org.jboss.netty.channel.ChannelOption.*;
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 
 /**
@@ -85,10 +83,10 @@ public class DefaultChannelConfig implements ChannelConfig {
     public Map<ChannelOption<?>, Object> getOptions() {
         return getOptions(
                 null,
-                CONNECT_TIMEOUT_MILLIS, MAX_MESSAGES_PER_READ, WRITE_SPIN_COUNT,
-                ALLOCATOR, AUTO_READ, AUTO_CLOSE, RCVBUF_ALLOCATOR, WRITE_BUFFER_HIGH_WATER_MARK,
-                WRITE_BUFFER_LOW_WATER_MARK, WRITE_BUFFER_WATER_MARK, MESSAGE_SIZE_ESTIMATOR,
-                SINGLE_EVENTEXECUTOR_PER_GROUP);
+                ChannelOption.CONNECT_TIMEOUT_MILLIS, ChannelOption.MAX_MESSAGES_PER_READ, ChannelOption.WRITE_SPIN_COUNT,
+                ChannelOption.ALLOCATOR, ChannelOption.AUTO_READ, ChannelOption.AUTO_CLOSE, ChannelOption.RCVBUF_ALLOCATOR, ChannelOption.WRITE_BUFFER_HIGH_WATER_MARK,
+                ChannelOption.WRITE_BUFFER_LOW_WATER_MARK, ChannelOption.WRITE_BUFFER_WATER_MARK, ChannelOption.MESSAGE_SIZE_ESTIMATOR,
+                ChannelOption.SINGLE_EVENTEXECUTOR_PER_GROUP);
     }
 
     protected Map<ChannelOption<?>, Object> getOptions(
@@ -126,40 +124,40 @@ public class DefaultChannelConfig implements ChannelConfig {
             throw new NullPointerException("option");
         }
 
-        if (option == CONNECT_TIMEOUT_MILLIS) {
+        if (option == ChannelOption.CONNECT_TIMEOUT_MILLIS) {
             return (T) Integer.valueOf(getConnectTimeoutMillis());
         }
-        if (option == MAX_MESSAGES_PER_READ) {
+        if (option == ChannelOption.MAX_MESSAGES_PER_READ) {
             return (T) Integer.valueOf(getMaxMessagesPerRead());
         }
-        if (option == WRITE_SPIN_COUNT) {
+        if (option == ChannelOption.WRITE_SPIN_COUNT) {
             return (T) Integer.valueOf(getWriteSpinCount());
         }
-        if (option == ALLOCATOR) {
+        if (option == ChannelOption.ALLOCATOR) {
             return (T) getAllocator();
         }
-        if (option == RCVBUF_ALLOCATOR) {
+        if (option == ChannelOption.RCVBUF_ALLOCATOR) {
             return (T) getRecvByteBufAllocator();
         }
-        if (option == AUTO_READ) {
+        if (option == ChannelOption.AUTO_READ) {
             return (T) Boolean.valueOf(isAutoRead());
         }
-        if (option == AUTO_CLOSE) {
+        if (option == ChannelOption.AUTO_CLOSE) {
             return (T) Boolean.valueOf(isAutoClose());
         }
-        if (option == WRITE_BUFFER_HIGH_WATER_MARK) {
+        if (option == ChannelOption.WRITE_BUFFER_HIGH_WATER_MARK) {
             return (T) Integer.valueOf(getWriteBufferHighWaterMark());
         }
-        if (option == WRITE_BUFFER_LOW_WATER_MARK) {
+        if (option == ChannelOption.WRITE_BUFFER_LOW_WATER_MARK) {
             return (T) Integer.valueOf(getWriteBufferLowWaterMark());
         }
-        if (option == WRITE_BUFFER_WATER_MARK) {
+        if (option == ChannelOption.WRITE_BUFFER_WATER_MARK) {
             return (T) getWriteBufferWaterMark();
         }
-        if (option == MESSAGE_SIZE_ESTIMATOR) {
+        if (option == ChannelOption.MESSAGE_SIZE_ESTIMATOR) {
             return (T) getMessageSizeEstimator();
         }
-        if (option == SINGLE_EVENTEXECUTOR_PER_GROUP) {
+        if (option == ChannelOption.SINGLE_EVENTEXECUTOR_PER_GROUP) {
             return (T) Boolean.valueOf(getPinEventExecutorPerGroup());
         }
         return null;
@@ -170,29 +168,29 @@ public class DefaultChannelConfig implements ChannelConfig {
     public <T> boolean setOption(ChannelOption<T> option, T value) {
         validate(option, value);
 
-        if (option == CONNECT_TIMEOUT_MILLIS) {
+        if (option == ChannelOption.CONNECT_TIMEOUT_MILLIS) {
             setConnectTimeoutMillis((Integer) value);
-        } else if (option == MAX_MESSAGES_PER_READ) {
+        } else if (option == ChannelOption.MAX_MESSAGES_PER_READ) {
             setMaxMessagesPerRead((Integer) value);
-        } else if (option == WRITE_SPIN_COUNT) {
+        } else if (option == ChannelOption.WRITE_SPIN_COUNT) {
             setWriteSpinCount((Integer) value);
-        } else if (option == ALLOCATOR) {
+        } else if (option == ChannelOption.ALLOCATOR) {
             setAllocator((ByteBufAllocator) value);
-        } else if (option == RCVBUF_ALLOCATOR) {
+        } else if (option == ChannelOption.RCVBUF_ALLOCATOR) {
             setRecvByteBufAllocator((RecvByteBufAllocator) value);
-        } else if (option == AUTO_READ) {
+        } else if (option == ChannelOption.AUTO_READ) {
             setAutoRead((Boolean) value);
-        } else if (option == AUTO_CLOSE) {
+        } else if (option == ChannelOption.AUTO_CLOSE) {
             setAutoClose((Boolean) value);
-        } else if (option == WRITE_BUFFER_HIGH_WATER_MARK) {
+        } else if (option == ChannelOption.WRITE_BUFFER_HIGH_WATER_MARK) {
             setWriteBufferHighWaterMark((Integer) value);
-        } else if (option == WRITE_BUFFER_LOW_WATER_MARK) {
+        } else if (option == ChannelOption.WRITE_BUFFER_LOW_WATER_MARK) {
             setWriteBufferLowWaterMark((Integer) value);
-        } else if (option == WRITE_BUFFER_WATER_MARK) {
+        } else if (option == ChannelOption.WRITE_BUFFER_WATER_MARK) {
             setWriteBufferWaterMark((WriteBufferWaterMark) value);
-        } else if (option == MESSAGE_SIZE_ESTIMATOR) {
+        } else if (option == ChannelOption.MESSAGE_SIZE_ESTIMATOR) {
             setMessageSizeEstimator((MessageSizeEstimator) value);
-        } else if (option == SINGLE_EVENTEXECUTOR_PER_GROUP) {
+        } else if (option == ChannelOption.SINGLE_EVENTEXECUTOR_PER_GROUP) {
             setPinEventExecutorPerGroup((Boolean) value);
         } else {
             return false;
@@ -297,7 +295,7 @@ public class DefaultChannelConfig implements ChannelConfig {
 
     @Override
     public ChannelConfig setRecvByteBufAllocator(RecvByteBufAllocator allocator) {
-        rcvBufAllocator = checkNotNull(allocator, "allocator");
+        rcvBufAllocator = ObjectUtil.checkNotNull(allocator, "allocator");
         return this;
     }
 
@@ -403,7 +401,7 @@ public class DefaultChannelConfig implements ChannelConfig {
 
     @Override
     public ChannelConfig setWriteBufferWaterMark(WriteBufferWaterMark writeBufferWaterMark) {
-        this.writeBufferWaterMark = checkNotNull(writeBufferWaterMark, "writeBufferWaterMark");
+        this.writeBufferWaterMark = ObjectUtil.checkNotNull(writeBufferWaterMark, "writeBufferWaterMark");
         return this;
     }
 

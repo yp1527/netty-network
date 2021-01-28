@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.group;
+package com.netty.network.channel.group;
 
 
-import org.jboss.netty.util.concurrent.GenericFutureListener;
+import com.netty.network.util.concurrent.GenericFutureListener;
 
 /**
  * Listens to the result of a {@link ChannelGroupFuture}.  The result of the

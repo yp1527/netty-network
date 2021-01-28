@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 /**
  * A hint object that provides human-readable message for easier resource leak tracking.

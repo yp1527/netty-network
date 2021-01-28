@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.channel.embedded;
+package com.netty.network.channel.embedded;
 
 
-import org.jboss.netty.channel.ChannelId;
+import com.netty.network.channel.ChannelId;
 
 /**
  * A dummy {@link ChannelId} implementation.

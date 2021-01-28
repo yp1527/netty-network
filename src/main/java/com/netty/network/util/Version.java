@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.io.InputStream;
 import java.net.URL;

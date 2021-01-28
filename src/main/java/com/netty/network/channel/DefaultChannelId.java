@@ -14,13 +14,13 @@
  * under the License.
  */
 
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBufUtil;
-import org.jboss.netty.util.internal.*;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.buffer.ByteBufUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.util.internal.*;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;

@@ -13,14 +13,14 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-import static org.jboss.netty.util.internal.ObjectUtil.checkPositive;
+import static com.netty.network.util.internal.ObjectUtil.checkPositive;
 
 
 /**

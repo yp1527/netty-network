@@ -13,13 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util.internal;
+package com.netty.network.util.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 
 /**
@@ -228,7 +226,7 @@ public final class StringUtil {
      * with anonymous classes.
      */
     public static String simpleClassName(Class<?> clazz) {
-        String className = checkNotNull(clazz, "clazz").getName();
+        String className = ObjectUtil.checkNotNull(clazz, "clazz").getName();
         final int lastDotIdx = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
         if (lastDotIdx > -1) {
             return className.substring(lastDotIdx + 1);
@@ -245,7 +243,7 @@ public final class StringUtil {
      * @return {@link CharSequence} the escaped value if necessary, or the value unchanged
      */
     public static CharSequence escapeCsv(CharSequence value) {
-        int length = checkNotNull(value, "value").length();
+        int length = ObjectUtil.checkNotNull(value, "value").length();
         if (length == 0) {
             return value;
         }
@@ -293,7 +291,7 @@ public final class StringUtil {
      * @return {@link CharSequence} the unescaped value if necessary, or the value unchanged
      */
     public static CharSequence unescapeCsv(CharSequence value) {
-        int length = checkNotNull(value, "value").length();
+        int length = ObjectUtil.checkNotNull(value, "value").length();
         if (length == 0) {
             return value;
         }

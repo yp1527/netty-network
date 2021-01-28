@@ -1,8 +1,8 @@
 
-package org.jboss.netty.util.concurrent;
+package com.netty.network.util.concurrent;
 
 
-import org.jboss.netty.util.internal.ObjectUtil;
+import com.netty.network.util.internal.ObjectUtil;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

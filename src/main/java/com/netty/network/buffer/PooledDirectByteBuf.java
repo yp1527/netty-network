@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.Recycler;
+import com.netty.network.util.Recycler;
 
 import java.io.IOException;
 import java.io.InputStream;

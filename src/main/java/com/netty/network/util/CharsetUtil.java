@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.InternalThreadLocalMap;
 
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
@@ -24,7 +24,7 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CodingErrorAction;
 import java.util.Map;
 
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
+import static com.netty.network.util.internal.ObjectUtil.checkNotNull;
 
 /**
  * A utility class that provides various common operations and constants

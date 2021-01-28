@@ -13,16 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.local;
+package com.netty.network.channel.local;
 
 
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.SingleThreadEventExecutor;
-import org.jboss.netty.util.internal.InternalThreadLocalMap;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.ThrowableUtil;
+import com.netty.network.channel.*;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.SingleThreadEventExecutor;
+import com.netty.network.util.internal.InternalThreadLocalMap;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.ThrowableUtil;
 
 import java.net.ConnectException;
 import java.net.SocketAddress;

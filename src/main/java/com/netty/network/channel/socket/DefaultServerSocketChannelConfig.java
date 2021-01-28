@@ -13,18 +13,16 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.socket;
+package com.netty.network.channel.socket;
 
 
-import org.jboss.netty.buffer.ByteBufAllocator;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.NetUtil;
+import com.netty.network.buffer.ByteBufAllocator;
+import com.netty.network.channel.*;
+import com.netty.network.util.NetUtil;
 
 import java.net.ServerSocket;
 import java.net.SocketException;
 import java.util.Map;
-
-import static org.jboss.netty.channel.ChannelOption.*;
 
 
 /**
@@ -49,19 +47,19 @@ public class DefaultServerSocketChannelConfig extends DefaultChannelConfig
 
     @Override
     public Map<ChannelOption<?>, Object> getOptions() {
-        return getOptions(super.getOptions(), SO_RCVBUF, SO_REUSEADDR, SO_BACKLOG);
+        return getOptions(super.getOptions(), ChannelOption.SO_RCVBUF, ChannelOption.SO_REUSEADDR, ChannelOption.SO_BACKLOG);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public <T> T getOption(ChannelOption<T> option) {
-        if (option == SO_RCVBUF) {
+        if (option == ChannelOption.SO_RCVBUF) {
             return (T) Integer.valueOf(getReceiveBufferSize());
         }
-        if (option == SO_REUSEADDR) {
+        if (option == ChannelOption.SO_REUSEADDR) {
             return (T) Boolean.valueOf(isReuseAddress());
         }
-        if (option == SO_BACKLOG) {
+        if (option == ChannelOption.SO_BACKLOG) {
             return (T) Integer.valueOf(getBacklog());
         }
 
@@ -72,11 +70,11 @@ public class DefaultServerSocketChannelConfig extends DefaultChannelConfig
     public <T> boolean setOption(ChannelOption<T> option, T value) {
         validate(option, value);
 
-        if (option == SO_RCVBUF) {
+        if (option == ChannelOption.SO_RCVBUF) {
             setReceiveBufferSize((Integer) value);
-        } else if (option == SO_REUSEADDR) {
+        } else if (option == ChannelOption.SO_REUSEADDR) {
             setReuseAddress((Boolean) value);
-        } else if (option == SO_BACKLOG) {
+        } else if (option == ChannelOption.SO_BACKLOG) {
             setBacklog((Integer) value);
         } else {
             return super.setOption(option, value);

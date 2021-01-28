@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.pool;
+package com.netty.network.channel.pool;
 
 
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.util.concurrent.Future;
-import org.jboss.netty.util.concurrent.Promise;
+import com.netty.network.channel.Channel;
+import com.netty.network.util.concurrent.Future;
+import com.netty.network.util.concurrent.Promise;
 
 import java.io.Closeable;
 

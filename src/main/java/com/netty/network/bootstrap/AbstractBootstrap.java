@@ -14,14 +14,13 @@
  * under the License.
  */
 
-package org.jboss.netty.bootstrap;
+package com.netty.network.bootstrap;
 
-import org.jboss.netty.channel.ChannelFactory;
-import org.jboss.netty.channel.*;
-import org.jboss.netty.util.AttributeKey;
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.GlobalEventExecutor;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.channel.*;
+import com.netty.network.util.AttributeKey;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.GlobalEventExecutor;
+import com.netty.network.util.internal.StringUtil;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -41,7 +40,7 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
 
     volatile EventLoopGroup group;
     @SuppressWarnings("deprecation")
-    private volatile ChannelFactory<? extends C> channelFactory;
+    private volatile com.netty.network.channel.ChannelFactory<? extends C> channelFactory;
     private volatile SocketAddress localAddress;
     private final Map<ChannelOption<?>, Object> options = new LinkedHashMap<ChannelOption<?>, Object>();
     private final Map<AttributeKey<?>, Object> attrs = new LinkedHashMap<AttributeKey<?>, Object>();
@@ -97,7 +96,7 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
      */
     @Deprecated
     @SuppressWarnings("unchecked")
-    public B channelFactory(ChannelFactory<? extends C> channelFactory) {
+    public B channelFactory(com.netty.network.channel.ChannelFactory<? extends C> channelFactory) {
         if (channelFactory == null) {
             throw new NullPointerException("channelFactory");
         }
@@ -117,8 +116,8 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
      * simplify your code.
      */
     @SuppressWarnings({ "unchecked", "deprecation" })
-    public B channelFactory(org.jboss.netty.bootstrap.ChannelFactory<? extends C> channelFactory) {
-        return channelFactory((ChannelFactory<C>) channelFactory);
+    public B channelFactory(com.netty.network.bootstrap.ChannelFactory<? extends C> channelFactory) {
+        return channelFactory((com.netty.network.channel.ChannelFactory<C>) channelFactory);
     }
 
     /**
@@ -412,7 +411,7 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     @SuppressWarnings("deprecation")
-    final ChannelFactory<? extends C> channelFactory() {
+    final com.netty.network.channel.ChannelFactory<? extends C> channelFactory() {
         return channelFactory;
     }
 

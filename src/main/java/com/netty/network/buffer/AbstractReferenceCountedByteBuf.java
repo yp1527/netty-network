@@ -14,15 +14,16 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.IllegalReferenceCountException;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.IllegalReferenceCountException;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-import static org.jboss.netty.util.internal.ObjectUtil.checkPositive;
+import static com.netty.network.util.internal.ObjectUtil.checkPositive;
 
 /**
  * Abstract base class for {@link ByteBuf} implementations that count references.
@@ -65,7 +66,7 @@ public abstract class AbstractReferenceCountedByteBuf extends AbstractByteBuf {
 
     @Override
     public ByteBuf retain(int increment) {
-        return retain0(checkPositive(increment, "increment"));
+        return retain0(ObjectUtil.checkPositive(increment, "increment"));
     }
 
     private ByteBuf retain0(int increment) {
@@ -101,7 +102,7 @@ public abstract class AbstractReferenceCountedByteBuf extends AbstractByteBuf {
 
     @Override
     public boolean release(int decrement) {
-        return release0(checkPositive(decrement, "decrement"));
+        return release0(ObjectUtil.checkPositive(decrement, "decrement"));
     }
 
     private boolean release0(int decrement) {

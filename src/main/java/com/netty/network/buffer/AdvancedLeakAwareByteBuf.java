@@ -20,8 +20,8 @@ package com.netty.network.buffer;
 import com.netty.network.util.ByteProcessor;
 import com.netty.network.util.ResourceLeak;
 import com.netty.network.util.internal.SystemPropertyUtil;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;

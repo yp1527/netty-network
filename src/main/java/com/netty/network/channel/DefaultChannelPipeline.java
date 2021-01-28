@@ -13,18 +13,18 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.ResourceLeakDetector;
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.EventExecutorGroup;
-import org.jboss.netty.util.concurrent.FastThreadLocal;
-import org.jboss.netty.util.internal.ObjectUtil;
-import org.jboss.netty.util.internal.StringUtil;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.ResourceLeakDetector;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.EventExecutorGroup;
+import com.netty.network.util.concurrent.FastThreadLocal;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.StringUtil;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 
 import java.net.SocketAddress;
 import java.util.*;

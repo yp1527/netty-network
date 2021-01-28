@@ -16,17 +16,16 @@
 package com.netty.network.channel.socket.nio;
 
 
+import com.netty.network.buffer.ByteBuf;
 import com.netty.network.channel.*;
+import com.netty.network.channel.nio.AbstractNioByteChannel;
 import com.netty.network.channel.socket.DefaultSocketChannelConfig;
 import com.netty.network.channel.socket.ServerSocketChannel;
 import com.netty.network.channel.socket.SocketChannelConfig;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.concurrent.GlobalEventExecutor;
 import com.netty.network.util.internal.PlatformDependent;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
-import com.netty.network.buffer.ByteBuf;
-import org.jboss.netty.channel.*;
-import com.netty.network.channel.nio.AbstractNioByteChannel;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

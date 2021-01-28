@@ -13,15 +13,15 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.RejectedExecutionHandler;
-import org.jboss.netty.util.concurrent.RejectedExecutionHandlers;
-import org.jboss.netty.util.concurrent.SingleThreadEventExecutor;
-import org.jboss.netty.util.internal.ObjectUtil;
-import org.jboss.netty.util.internal.SystemPropertyUtil;
-import org.jboss.netty.util.internal.UnstableApi;
+import com.netty.network.util.concurrent.RejectedExecutionHandler;
+import com.netty.network.util.concurrent.RejectedExecutionHandlers;
+import com.netty.network.util.concurrent.SingleThreadEventExecutor;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.SystemPropertyUtil;
+import com.netty.network.util.internal.UnstableApi;
 
 import java.util.Queue;
 import java.util.concurrent.Executor;

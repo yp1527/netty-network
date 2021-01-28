@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.local;
+package com.netty.network.channel.local;
 
 
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelException;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.channel.Channel;
+import com.netty.network.channel.ChannelException;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
 
 import java.net.SocketAddress;
 import java.util.concurrent.ConcurrentMap;

@@ -13,18 +13,18 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.socket.nio;
+package com.netty.network.channel.socket.nio;
 
 
-import org.jboss.netty.channel.ChannelException;
-import org.jboss.netty.channel.ChannelMetadata;
-import org.jboss.netty.channel.ChannelOutboundBuffer;
-import org.jboss.netty.channel.nio.AbstractNioMessageChannel;
-import org.jboss.netty.channel.socket.DefaultServerSocketChannelConfig;
-import org.jboss.netty.channel.socket.ServerSocketChannelConfig;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.logging.InternalLogger;
-import org.jboss.netty.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.channel.ChannelException;
+import com.netty.network.channel.ChannelMetadata;
+import com.netty.network.channel.ChannelOutboundBuffer;
+import com.netty.network.channel.socket.DefaultServerSocketChannelConfig;
+import com.netty.network.channel.socket.ServerSocketChannelConfig;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
+import com.netty.network.channel.nio.AbstractNioMessageChannel;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -41,7 +41,7 @@ import java.util.List;
  * NIO selector based implementation to accept new connections.
  */
 public class NioServerSocketChannel extends AbstractNioMessageChannel
-                             implements org.jboss.netty.channel.socket.ServerSocketChannel {
+                             implements com.netty.network.channel.socket.ServerSocketChannel {
 
     private static final ChannelMetadata METADATA = new ChannelMetadata(false, 16);
     private static final SelectorProvider DEFAULT_SELECTOR_PROVIDER = SelectorProvider.provider();

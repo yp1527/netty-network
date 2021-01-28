@@ -14,10 +14,10 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
-import org.jboss.netty.util.internal.ObjectUtil;
-import org.jboss.netty.util.internal.PlatformDependent;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.PlatformDependent;
 
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;

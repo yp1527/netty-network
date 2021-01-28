@@ -13,18 +13,17 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.pool;
+package com.netty.network.channel.pool;
 
 
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.ReadOnlyIterator;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.ReadOnlyIterator;
 
 import java.io.Closeable;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentMap;
-
-import static org.jboss.netty.util.internal.ObjectUtil.checkNotNull;
 
 /**
  * A skeletal {@link ChannelPoolMap} implementation. To find the right {@link ChannelPool}
@@ -36,7 +35,7 @@ public abstract class AbstractChannelPoolMap<K, P extends ChannelPool>
 
     @Override
     public final P get(K key) {
-        P pool = map.get(checkNotNull(key, "key"));
+        P pool = map.get(ObjectUtil.checkNotNull(key, "key"));
         if (pool == null) {
             pool = newPool(key);
             P old = map.putIfAbsent(key, pool);
@@ -55,7 +54,7 @@ public abstract class AbstractChannelPoolMap<K, P extends ChannelPool>
      * Please note that {@code null} keys are not allowed.
      */
     public final boolean remove(K key) {
-        P pool =  map.remove(checkNotNull(key, "key"));
+        P pool =  map.remove(ObjectUtil.checkNotNull(key, "key"));
         if (pool != null) {
             pool.close();
             return true;
@@ -84,7 +83,7 @@ public abstract class AbstractChannelPoolMap<K, P extends ChannelPool>
 
     @Override
     public final boolean contains(K key) {
-        return map.containsKey(checkNotNull(key, "key"));
+        return map.containsKey(ObjectUtil.checkNotNull(key, "key"));
     }
 
     /**

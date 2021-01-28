@@ -16,11 +16,10 @@
 package com.netty.network.util.concurrent;
 
 
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.Signal;
 import com.netty.network.util.internal.*;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
-import org.jboss.netty.util.internal.*;
 
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;

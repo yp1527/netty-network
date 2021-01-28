@@ -13,10 +13,10 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.util.concurrent.EventExecutorGroup;
+import com.netty.network.util.concurrent.EventExecutorGroup;
 
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;

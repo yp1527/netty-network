@@ -1,9 +1,34 @@
+# 忽略特定文件以外的文件
+.idea
+*.DS_Store
+Thumbs.db
+*.sw?
+.#*
+*#
+*~
+*.sublime-*
+# Build Artifacts
+.gradle/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
+
+# Eclipse Project Files
+.classpath
+.project
+.settings/
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea
+out
+*.txt
 /target/
-/doc/
-/jar/
-/license/
-/.idea/
-/*.iml
-.DS_Store
-.gitignore
+/logs/
+/loggingDir_IS_UNDEFINED/
+*.log
+MANIFEST.MF
 

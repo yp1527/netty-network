@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.pool;
+package com.netty.network.channel.pool;
 
 /**
  * Allows to map {@link ChannelPool} implementations to a specific key.

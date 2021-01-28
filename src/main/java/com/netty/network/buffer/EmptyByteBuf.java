@@ -14,13 +14,13 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.ByteProcessor;
-import org.jboss.netty.util.internal.EmptyArrays;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.ByteProcessor;
+import com.netty.network.util.internal.EmptyArrays;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
 
 import java.io.InputStream;
 import java.io.OutputStream;

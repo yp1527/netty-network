@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 /**
  * WriteBufferWaterMark is used to set low water mark and high water mark for the write buffer.

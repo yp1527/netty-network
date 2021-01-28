@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.util;
+package com.netty.network.util;
 
 public interface ResourceLeak {
     /**

@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 import java.util.List;
 

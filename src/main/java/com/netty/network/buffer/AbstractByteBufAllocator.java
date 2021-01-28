@@ -14,13 +14,13 @@
  * under the License.
  */
 
-package org.jboss.netty.buffer;
+package com.netty.network.buffer;
 
 
-import org.jboss.netty.util.ResourceLeak;
-import org.jboss.netty.util.ResourceLeakDetector;
-import org.jboss.netty.util.internal.PlatformDependent;
-import org.jboss.netty.util.internal.StringUtil;
+import com.netty.network.util.ResourceLeak;
+import com.netty.network.util.ResourceLeakDetector;
+import com.netty.network.util.internal.PlatformDependent;
+import com.netty.network.util.internal.StringUtil;
 
 /**
  * Skeletal {@link ByteBufAllocator} implementation to extend.

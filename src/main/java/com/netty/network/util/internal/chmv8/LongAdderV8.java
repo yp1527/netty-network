@@ -19,11 +19,11 @@
  * Expert Group and released to the public domain, as explained at
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-package org.jboss.netty.util.internal.chmv8;
+package com.netty.network.util.internal.chmv8;
 
 
 
-import org.jboss.netty.util.internal.LongCounter;
+import com.netty.network.util.internal.LongCounter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

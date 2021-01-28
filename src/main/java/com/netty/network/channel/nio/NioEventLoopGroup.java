@@ -13,17 +13,17 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel.nio;
+package com.netty.network.channel.nio;
 
 
-import org.jboss.netty.channel.DefaultSelectStrategyFactory;
-import org.jboss.netty.channel.EventLoop;
-import org.jboss.netty.channel.MultithreadEventLoopGroup;
-import org.jboss.netty.channel.SelectStrategyFactory;
-import org.jboss.netty.util.concurrent.EventExecutor;
-import org.jboss.netty.util.concurrent.EventExecutorChooserFactory;
-import org.jboss.netty.util.concurrent.RejectedExecutionHandler;
-import org.jboss.netty.util.concurrent.RejectedExecutionHandlers;
+import com.netty.network.channel.DefaultSelectStrategyFactory;
+import com.netty.network.channel.EventLoop;
+import com.netty.network.channel.MultithreadEventLoopGroup;
+import com.netty.network.channel.SelectStrategyFactory;
+import com.netty.network.util.concurrent.EventExecutor;
+import com.netty.network.util.concurrent.EventExecutorChooserFactory;
+import com.netty.network.util.concurrent.RejectedExecutionHandler;
+import com.netty.network.util.concurrent.RejectedExecutionHandlers;
 
 import java.nio.channels.Selector;
 import java.nio.channels.spi.SelectorProvider;

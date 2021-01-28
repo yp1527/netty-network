@@ -19,8 +19,8 @@ package com.netty.network.channel;
 import com.netty.network.util.concurrent.EventExecutorChooserFactory;
 import com.netty.network.util.concurrent.MultithreadEventExecutorGroup;
 import com.netty.network.util.internal.SystemPropertyUtil;
-import com.netty.network.util.internal.logging.InternalLogger;
-import com.netty.network.util.internal.logging.InternalLoggerFactory;
+import com.netty.network.logging.InternalLogger;
+import com.netty.network.logging.InternalLoggerFactory;
 import com.netty.network.util.concurrent.DefaultThreadFactory;
 
 import java.util.concurrent.Executor;

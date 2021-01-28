@@ -13,11 +13,11 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.ByteBufHolder;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.ByteBufHolder;
 
 /**
  * Default {@link MessageSizeEstimator} implementation which supports the estimation of the size of

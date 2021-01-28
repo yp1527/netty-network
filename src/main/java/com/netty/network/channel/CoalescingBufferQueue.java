@@ -12,14 +12,14 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.jboss.netty.channel;
+package com.netty.network.channel;
 
 
-import org.jboss.netty.buffer.ByteBuf;
-import org.jboss.netty.buffer.CompositeByteBuf;
-import org.jboss.netty.buffer.Unpooled;
-import org.jboss.netty.util.ReferenceCountUtil;
-import org.jboss.netty.util.internal.ObjectUtil;
+import com.netty.network.util.ReferenceCountUtil;
+import com.netty.network.util.internal.ObjectUtil;
+import com.netty.network.buffer.ByteBuf;
+import com.netty.network.buffer.CompositeByteBuf;
+import com.netty.network.buffer.Unpooled;
 
 import java.util.ArrayDeque;
 
